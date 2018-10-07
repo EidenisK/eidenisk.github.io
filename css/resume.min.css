@@ -41,3 +41,14 @@
  #copy {
    text-align: center;
  }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 470px) {
+  #surname {
+    font-size: 60pt;
+  }
+}
