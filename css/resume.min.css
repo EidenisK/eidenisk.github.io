@@ -41,15 +41,3 @@
  #copy {
    text-align: center;
  }
-
-iframe {
-  width: 315px;
-  height: 177px;
-}
-
- @media screen and (min-width: 992px) {
-   iframe {
-     width: 560px;
-     height: 315px;
-   }
- }
