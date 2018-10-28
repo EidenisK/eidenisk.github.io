@@ -28,6 +28,8 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+
 
  </head>
 
@@ -49,16 +51,19 @@
       <a class="nav-link js-scroll-trigger" href="#apie">Pradžia</a>
      </li>
      <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#svarbu">Svarbūs projektai</a>
+      <a class="nav-link js-scroll-trigger" href="#svarbu">Svarbūs Projektai</a>
      </li>
      <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#mokykliniai">Mokykliniai projektai</a>
+      <a class="nav-link js-scroll-trigger" href="#mokykliniai">Mokykliniai Projektai</a>
      </li>
      <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#video">Vaizdo įrašai</a>
+      <a class="nav-link js-scroll-trigger" href="#video">Vaizdo Įrašai</a>
      </li>
      <li class="nav-item">
       <a class="nav-link js-scroll-trigger" href="#pictures">Paveikslėliai</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link js-scroll-trigger" href="#send">Duomenų Bazės Prieiga</a>
      </li>
     </ul>
    </div>
@@ -326,12 +331,21 @@
    <hr class="m-0">
    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="send">
      <div class="my-auto">
-       <h2>SUSISIEKITE</h2>
+       <h2>DUOMENŲ BAZĖS PRIEIGA</h2>
+       <hr>
+       <div class="row">
+         <div class="col md-12">
+             <h3>Prisijungimas</h3>
+             <input type="text" placeholder="Slaptažodis" id="login_password">
+             <button id="login_button">Prisijungti</button>
+             <button id="logout_button">Atsijungti</button>
+             <i><p id="login_status">Būsena: laukiama...</p></i>
+         </div>
+       </div>
        <hr>
        <div class="row">
          <div class="col md-6">
            <h3>Siųsti žinutę</h3>
-           <input type="checkbox" id="approved_message_checkbox"> Siųsti į "patvirtintas žinutes"<br>
            <input type="text" id="sendTextInput" placeholder="Įveskite tekstą">
            <button id="sendTextButton">Siųsti</button><br>
            <i><p id="text_status">Būsena: laukiama...</p></i>
@@ -351,21 +365,8 @@
          </div>
          <div class="col md-6">
            <h3>Rodyti failus</h3>
-           <button>Rodyti</button>
-         </div>
-       </div>
-       <hr>
-       <div class="row">
-         <div class="col md-6">
-           <h3>Ištrinti žinutes</h3>
-           <input type="checkbox" id="delete_approved_checkbox"> Ištrinti iš "patvirtintų žinučių"<br>
-           <input type="number" id="delete_messages_input" placeholder="Įveskite žinutės numerį">
-           <button id="delete_messages_button">Išrinti</button>
-           <i><p id="delete_messages_status">Būsena: laukiama...</p></i>
-         </div>
-         <div class="col md-6">
-           <h3>Ištrinti failus</h3>
-           <button>Rodyti</button>
+           <button id="load_files_button">Rodyti</button>
+           <ul id="load_files_list"></ul>
          </div>
        </div>
      </div>
@@ -373,112 +374,11 @@
    </section>
 
   </div>
-
-  <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAMNdtWVeedQ0-NOBTDPZpxVZcpxMcTnFE",
-    authDomain: "eidenisk-data-collection.firebaseapp.com",
-    databaseURL: "https://eidenisk-data-collection.firebaseio.com",
-    projectId: "eidenisk-data-collection",
-    storageBucket: "eidenisk-data-collection.appspot.com",
-    messagingSenderId: "295312564384"
-  };
-  firebase.initializeApp(config);
-
-  var fileButton = document.getElementById('fileButton');
-  fileButton.addEventListener('change', function(e) {
-    //get files
-    var file = e.target.files[0];
-    //create storage ref
-    var storageRef = firebase.storage().ref('uploads' + file.name);
-    //upload
-    var task = storageRef.put(file);
-    task.on('state_changed',
-      function progress(snapshot) {
-        var file_status = document.getElementById("file_status");
-        var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        file_status.innerHTML = "Įkeliama: " + percentage + "%";
-      },
-      function error(err) {
-        var file_status = document.getElementById("file_status");
-        file_status.innerHTML = "Būsena:" + err.what();
-      },
-      function complete() {
-        var file_status = document.getElementById("file_status");
-        file_status.innerHTML = "Būsena: ĮKELTA";
-      }
-    );
-  });
-  const firestore = firebase.firestore();
-  const settings = {/* your settings... */ timestampsInSnapshots: true};
-  firestore.settings(settings)
-
-  const outputHeader = document.querySelector("#sendTextHeader");
-  const inputText = document.querySelector("#sendTextInput");
-  const saveButton = document.querySelector("#sendTextButton");
-  const approved = document.querySelector('#approved_message_checkbox');
-
-  const docRef = firestore.doc("messages/" + new Date().toJSON());
-
-  saveButton.addEventListener("click", function () {
-    var text_status = document.getElementById("text_status");
-    text_status.innerHTML = "Būsena: SIUNČIAMA";
-    var date = new Date().toJSON();
-    var docRef;
-    if(approved.checked) docRef = firestore.doc("approved_messages/" + date);
-    else docRef = firestore.doc("messages"/ + date);
-    docRef.set( {
-      text: inputText.value,
-      date: date
-    }).then(function() {
-      text_status.innerHTML = "Būsena: NUSIŲSTA";
-    }).catch(function(error) {
-      text_status.innerHTML = "Būsena: KLAIDA - " + error.what();
-    });
-  });
-
-  const load_messages_button = document.querySelector('#load_messages_button');
-  const load_messages_list = document.querySelector('#load_messages_list');
-
-  load_messages_button.addEventListener("click", function() {
-    firestore.collection('approved_messages').get().then(function(snap) {
-      var idx = 0;
-      snap.forEach(function(doc) {
-        //console.log(doc.id, " | ", doc.data());
-        if(doc.data().text != "sample") {
-          var text = "<li><b>" + idx + ". " + doc.data().date + "</b><br>" + doc.data().text + "</li>"
-          load_messages_list.innerHTML += text;
-        }
-        idx++;
-      })
-    });
-  });
-
-  const deleteTextInput = document.querySelector('#delete_messages_input');
-  const deleteTextButton = document.querySelector('#delete_messages_button');
-  const deleteTextStatus = document.querySelector('#delete_messages_status');
-  const deleteApproved = document.querySelector('#delete_approved_checkbox');
-
-  deleteTextButton.addEventListener("click", function () {
-    deleteTextStatus.innerHTML = "Būsena: TRINAMA";
-    var idx = deleteTextInput.value;
-    if(deleteApproved.checked) {
-      firestore.collection('approved_messages').get().then(function(snap) {
-        var currIdx = 0;
-        snap.forEach(function(doc) {
-          if(currIdx == idx)
-            doc.delete().then(function() {
-              deleteTextStatus.innerHTML = "Būsena: IŠTRINTA";
-            }).catch(function(error) {
-              deleteTextStatus.innerHTML = "Būsena: KLAIDA - " + error.what();
-            });
-          currIdx++;
-        })
-      });
-    }
-  });
-  </script>
+  <!-- Database function JavaScript -->
+  <script src="js/moment.js"></script>
+  <script src="js/database-config.js"></script>
+  <script src="js/database-message-functions.js"></script>
+  <script src="js/database-file-functions.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

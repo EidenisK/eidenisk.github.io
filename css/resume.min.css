@@ -53,7 +53,7 @@ html, body {
   }
 }
 
-#load_messages_list {
+#load_messages_list, #load_files_list {
   text-align: left;
   list-style-type: none;
   padding-left: 0;
