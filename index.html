@@ -346,7 +346,8 @@
        <div class="row">
          <div class="col md-6">
            <h3>Siųsti žinutę</h3>
-           <input type="text" id="sendTextInput" placeholder="Įveskite tekstą">
+           <input type="text" id="sendTextInput" placeholder="Įveskite tekstą"><br>
+           <input type="text" id="sendLinkInput" placeholder="Įveskite nuorodą (nebūtina)">
            <button id="sendTextButton">Siųsti</button><br>
            <i><p id="text_status">Būsena: laukiama...</p></i>
          </div>
@@ -358,15 +359,10 @@
        </div>
        <hr>
        <div class="row">
-         <div class="col md-6">
-           <h3>Rodyti žinutes</h3>
+         <div class="col md-12">
+           <h3>Duomenų peržiūra</h3>
            <button id="load_messages_button">Rodyti</button>
            <ul id="load_messages_list"></ul>
-         </div>
-         <div class="col md-6">
-           <h3>Rodyti failus</h3>
-           <button id="load_files_button">Rodyti</button>
-           <ul id="load_files_list"></ul>
          </div>
        </div>
      </div>

@@ -4,6 +4,7 @@
 
 const inputText = document.querySelector("#sendTextInput");
 const saveButton = document.querySelector("#sendTextButton");
+const linkText = document.querySelector('#sendLinkInput');
 
 saveButton.addEventListener("click", function () {
   var text_status = document.getElementById("text_status");
@@ -18,9 +19,11 @@ saveButton.addEventListener("click", function () {
 
   text_status.innerHTML = "Būsena: SIUNČIAMA";
   var date = moment().format('YYYY-MM-DD HH:mm:ss');
-  var docRef = firestore.doc("approved_messages/" + date);
+  var docRef = firestore.doc("openData/" + date);
   docRef.set( {
-    text: inputText.value,
+    name: inputText.value,
+    link: linkText.value,
+    downloadURL: "sample",
     date: date
   }).then(function() {
     text_status.innerHTML = "Būsena: NUSIŲSTA";
@@ -37,16 +40,23 @@ const load_messages_button = document.querySelector('#load_messages_button');
 const load_messages_list = document.querySelector('#load_messages_list');
 
 load_messages_button.addEventListener("click", function() {
-  firestore.collection('approved_messages').get().then(function(snap) {
-    var idx = 0;
+  firestore.collection('openData').get().then(function(snap) {
+    var idx = 1;
     load_messages_list.innerHTML = "";
     snap.forEach(function(doc) {
-      if(doc.data().text != "sample") {
-        var text = "<li><b>" + idx + ". " + doc.data().date + '</b><br>' + doc.data().text + '<br><u onclick="delete_messages(' + "'" + doc.id + "'" + ')">IŠTRINTI</u>' + "</li>"
+      if(doc.data().downloadURL != "sample") {
+        var text = "<li><b>" + idx + ". " + doc.data().name + '</b><br>' + doc.data().date + '<br><u onclick="delete_files(' + "'" + doc.id + "','" + doc.data().name + "'" + ')">IŠTRINTI</u>, <a href="' + doc.data().downloadURL + '">SIŲSTIS</a>' + "</li>"
+        load_messages_list.innerHTML += text;
+      } else if(doc.data().name != "sample") {
+        var text = "<li><b>" + idx + ". ";
+        if(doc.data().link != "sample")
+          text += '<a href="' + doc.data().link + '">' + doc.data().name + "</a>";
+        else text += doc.data().name;
+        text += '</b><br>' + doc.data().date + '<br><u onclick="delete_messages(' + "'" + doc.id + "'" + ')">IŠTRINTI</u>' + "</li>"
         load_messages_list.innerHTML += text;
       }
       idx++;
-    })
+    });
   });
 });
 
@@ -55,6 +65,6 @@ load_messages_button.addEventListener("click", function() {
 //--------------------------------------------
 
 function delete_messages(document_id) {
-  firestore.doc("approved_messages/" + document_id).delete();
+  firestore.doc("openData/" + document_id).delete();
   load_messages_button.click();
 }
