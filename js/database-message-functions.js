@@ -12,14 +12,14 @@ saveButton.addEventListener("click", function () {
     text_status.innerHTML = "Būsena: KLAIDA - NEPRISIJUNGTA";
     return;
   }
-
+  var date = moment().format('YYYY-MM-DD HH:mm:ss');
   text_status.innerHTML = "Būsena: SIUNČIAMA";
   var docRef = firestore.doc("openData/" + date);
   docRef.set( {
     name: inputText.value,
     link: linkText.value,
     downloadURL: "sample",
-    date: moment().format('YYYY-MM-DD HH:mm:ss')
+    date: date
   }).then(function() {
     text_status.innerHTML = "Būsena: NUSIŲSTA";
   }).catch(function(error) {
