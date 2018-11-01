@@ -53,8 +53,48 @@ html, body {
   }
 }
 
-#load_messages_list, #load_files_list {
+#load_messages_list {
   text-align: left;
   list-style-type: none;
   padding-left: 0;
+  margin-top: 10px;
+  color: black;
+}
+
+#load_messages_list > li {
+  padding: 4px 10px;
+}
+
+#load_messages_list > li > u {
+  color: #5fbd38;
+}
+
+#load_messages_list > li > u:hover {
+  color: #2c5919;
+}
+
+input {
+  margin-bottom: 5px;
+  border:none;
+}
+
+input[type=text], input[type=password] {
+  border-bottom: 1px solid green;
+}
+
+input[type=text] {
+  width:100%;
+}
+
+button {
+  background: green;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 15px;
+  font-weight: bold;
+}
+
+.lyginis {
+  background: #cee2c9;
 }
