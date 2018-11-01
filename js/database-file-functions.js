@@ -1,6 +1,7 @@
 var storageRef = firebase.storage();
 var fileButton = document.querySelector('#fileButton');
 var file_status = document.querySelector("#file_status");
+var fileName = document.querySelector('#fileNameInput');
 
 //--------------------------------------------
 //-----------------UPLOAD---------------------
@@ -23,18 +24,20 @@ function uploadFile(e) {
     },
     function complete() {
       file_status.innerHTML = "Būsena: FAILAS ĮKELTAS";
-      updateDatabase(fileRef, file);
+      if(fileName.value != "")
+        updateDatabase(fileRef, fileName.value);
+      else updateDatabase(fileRef, file.name);
       loadMessageList();
     }
   );
 }
 
-function updateDatabase(fileRef, file) {
+function updateDatabase(fileRef, name) {
   var date = moment().format('YYYY-MM-DD HH:mm:ss');
   var docRef = firestore.doc("openData/" + date);
   fileRef.getDownloadURL().then(function(url) {
     docRef.set( {
-      name: file.name,
+      name: name,
       link: "sample",
       downloadURL: url,
       date: date
