@@ -98,3 +98,7 @@ button {
 .lyginis {
   background: #cee2c9;
 }
+
+.img-responsive {
+  padding: 10px;
+}
