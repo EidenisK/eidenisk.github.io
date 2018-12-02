@@ -102,3 +102,7 @@ button {
 .img-responsive {
   padding: 10px;
 }
+
+#m_proj {
+  display: none;
+}
