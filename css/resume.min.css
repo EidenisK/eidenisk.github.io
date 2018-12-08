@@ -124,3 +124,8 @@ button {
 .lang-image {
   margin: 3px 3px;
 }
+
+
+.social-icons a {
+  margin-bottom: 10px !important;
+}
