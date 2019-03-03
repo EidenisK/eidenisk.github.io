@@ -1,7 +1,7 @@
 var storageRef = firebase.storage();
 var fileButton = document.querySelector('#fileButton');
 var file_status = document.querySelector("#file_status");
-var fileName = document.querySelector('#fileNameInput');
+var fileName = document.querySelector('#sendTextInput');
 
 //--------------------------------------------
 //-----------------UPLOAD---------------------
@@ -12,18 +12,21 @@ fileButton.addEventListener('change', function(e) { uploadFile(e) });
 function uploadFile(e) {
   var file = e.target.files[0];
   var fileRef = storageRef.ref("openData/" + file.name);
+  $("#load_messages_button").css("background", "white");
 
   var task = fileRef.put(file);
   task.on('state_changed',
     function progress(snapshot) {
       var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      file_status.innerHTML = "Įkeliama: " + percentage + "%";
+      var str = "linear-gradient(white, white " + (100 - percentage - 10) + "%, #b4fcb0 " + (100-percentage) + "%)";
+      $("#load_messages_button").css("background", str);
     },
     function error(err) {
-      file_status.innerHTML = "Būsena: KLAIDA - " + err.message;
+      $("#load_messages_button").css("background", "#ed9797");
+      console.log(err.message);
     },
     function complete() {
-      file_status.innerHTML = "Būsena: FAILAS ĮKELTAS";
+      console.log("DONE upload");
       if(fileName.value != "")
         updateDatabase(fileRef, fileName.value);
       else updateDatabase(fileRef, file.name);
@@ -42,9 +45,11 @@ function updateDatabase(fileRef, name) {
       downloadURL: url,
       date: date
     }).then(function() {
-      file_status.innerHTML = "Būsena: ĮKELTA";
+      console.log("DONE update");
+      $("#load_messages_button").css("background", "#ccf2bc");
     }).catch(function(error) {
-      file_status.innerHTML = "Būsena: KLAIDA - " + error.message;
+      console.log(error.message);
+      $("#load_messages_button").css("background", "#ed9797");
     });
   });
 }
@@ -56,5 +61,5 @@ function updateDatabase(fileRef, name) {
 function delete_files(database_file_id, storage_file_name) {
   if (!firebase.auth().currentUser) return;
   firestore.doc("openData/" + database_file_id).delete();
-  storageRef.ref('uploads/' + storage_file_name).delete().then(loadMessageList());
+  storageRef.ref('openData/' + storage_file_name).delete().then(loadMessageList());
 }

@@ -20,7 +20,7 @@ $("#upload_row").hide();
 //-----------------LOGIN----------------------
 //--------------------------------------------
 
-var loginButton = document.querySelector('#login_button');
+/*var loginButton = document.querySelector('#login_button');
 var loginPassword = document.querySelector('#login_password');
 var loginStatus = document.querySelector('#login_status');
 
@@ -33,4 +33,4 @@ loginButton.addEventListener("click", function(e) {
   }).catch(function(error) {
     loginStatus.innerHTML = "Būsena: KLAIDA - " + error.message;
   });
-});
+});*/

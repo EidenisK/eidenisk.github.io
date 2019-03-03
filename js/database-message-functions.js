@@ -7,25 +7,35 @@ const saveButton = document.querySelector("#sendTextButton");
 const linkText = document.querySelector('#sendLinkInput');
 const text_status = document.getElementById("text_status");
 
-saveButton.addEventListener("click", function () {
+function uploadMessage() {
   if (!firebase.auth().currentUser) {
-    text_status.innerHTML = "Būsena: KLAIDA - NEPRISIJUNGTA";
+    console.log("NEPRISIJUNGTA");
+    $("#load_messages_button").css("background", "#ed9797");
     return;
   }
+
+  $("#load_messages_button").css("background", "white");
+
+
   var date = moment().format('YYYY-MM-DD HH:mm:ss');
-  text_status.innerHTML = "Būsena: SIUNČIAMA";
   var docRef = firestore.doc("openData/" + date);
+  var nuoroda;
+  if(linkText.value == "" || linkText.value == null || linkText.value == "Įveskite nuorodą (nebūtina)")
+    nuoroda = "sample";
+  else nuoroda = linkText.value;
   docRef.set( {
     name: inputText.value,
-    link: linkText.value,
+    link: nuoroda,
     downloadURL: "sample",
     date: date
   }).then(function() {
-    text_status.innerHTML = "Būsena: NUSIŲSTA";
+    console.log("DONE");
+    $("#load_messages_button").css("background", "#ccf2bc");
   }).catch(function(error) {
-    text_status.innerHTML = "Būsena: KLAIDA - " + error.message;
+    console.log(error.message);
+    $("#load_messages_button").css("background", "#ed9797");
   });
-});
+}
 
 //--------------------------------------------
 //-----------------LOAD-----------------------
@@ -34,8 +44,31 @@ saveButton.addEventListener("click", function () {
 const load_messages_button = document.querySelector('#load_messages_button');
 const load_messages_list = document.querySelector('#load_messages_list');
 
-load_messages_button.addEventListener("click", function() {
-  loadMessageList();
+var view_mode = true;
+
+$("#mode_button").click(function(e) {
+  if (!firebase.auth().currentUser)
+    return;
+
+  if(!view_mode) {
+    $("#upload_row").hide();
+    $("#view_row").show();
+
+    $("#up-icon").hide();
+    $("#down-icon").show();
+    loadMessageList();
+    view_mode = true;
+    $("#load_messages_button").css("background", "white");
+  } else {
+    $("#upload_row").show();
+    $("#view_row").hide();
+
+    $("#up-icon").show();
+    $("#down-icon").hide();
+    view_mode = false;
+    $("#load_messages_button").css("background", "white");
+
+  }
 });
 
 function loadMessageList() {
@@ -49,7 +82,7 @@ function loadMessageList() {
         var text = "<li";
         if(idx % 2 == 0)
           text += ' class="lyginis"';
-        text += "><b>" + idx + ". ";
+        text += "><b>";
 
         if(link != "sample")
           text += '<a href="' + link + '">' + name + "</a>";
