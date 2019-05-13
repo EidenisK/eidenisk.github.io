@@ -101,7 +101,7 @@ function loadMessageList() {
           text += ', <a href="' + url + '">SIŲSTIS</a>';
         text += "</li>"
 
-        load_messages_list.innerHTML += text;
+        load_messages_list.innerHTML = text + load_messages_list.innerHTML;
 
         idx++;
       }
