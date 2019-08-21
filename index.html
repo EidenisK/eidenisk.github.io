@@ -1,215 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 
- <head>
-  <title>Eidenis Kasperavičius</title>
+<head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="description" content="Programavimas • Grafinis ir audio dizainas • WEB ir IT sistemų kūrimas">
+  <meta name="author" content="Eidenis Kasperavičius">
 
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
-
-  <!-- Custom icon -->
+  <meta property="og:url" content="https://bit.ly/eidenis" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Programavimas • Grafinis ir audio dizainas • WEB ir IT sistemų kūrimas"/>
+  <meta property="og:image:url" content="https://eidenisk.github.io/img/profile.png" />
+  <meta property="og:image" content="https://eidenisk.github.io/img/profile.png" />
+  <meta property="og:title" content="Eidenis Kasperavičius"/>
+  <title>Eidenis Kasperavičius</title>
   <link REL="SHORTCUT ICON" href="./img/E.ico">
 
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
- </head>
+  <!-- Custom fonts for this theme -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
- <body id="page-top">
+  <!-- Theme CSS -->
+  <link href="css/freelancer.min.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <link href="css/timeline.css" rel="stylesheet">
+</head>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-   <a class="navbar-brand js-scroll-trigger" href="#page-top">
-    <span class="d-block d-lg-none">Eidenis Kasperavičius</span>
-    <span class="d-none d-lg-block">
-     <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-    </span>
-   </a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-   </button>
-   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#apie">Pradžia</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#pasiekimai">Pasiekimai</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#svarbu">Projektai</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#video">Vaizdo Įrašai</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="#pictures">Paveikslėliai</a>
-     </li>
-     <li class="nav-item">
-      <a class="nav-link js-scroll-trigger" href="./database.html">Duomenų Bazė</a>
-     </li>
-    </ul>
-   </div>
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Eidenis Kasperavičius</a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-secondary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Meniu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="#portfolio">Projektai</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="#about">Apie</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3" href="https://bit.ly/e-k-db">Duomenų bazė</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 
-  <div class="container-fluid p-0">
+  <!-- Masthead -->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column" id="name-container">
 
-   <section class="resume-section p-3 p-lg-5 d-flex d-column" id="apie">
-    <div class="my-auto">
-     <h1 class="mb-0">Eidenis
-      <span class="text-primary" id="surname">Kasperavičius</span>
-     </h1>
-     <div class="subheading mb-5"><a href="https://eidenisk.github.io">bit.ly/eidenis</a> • <a href="mailto:eidenis.gargzdai@gmail.com">eidenis.gargzdai@gmail.com</a></div>
-     <p class="lead mb-5"></p>
-     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/eidenis-kasperavi%C4%8Dius-a2a537171/">
-       <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com/eidenisk">
-       <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.instagram.com/eidenisk/">
-       <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/eidenis.kasperavicius">
-       <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="#" class="lang lang-container">
-        <img src="./img/LT.png" class="lang lang-image"/>
-      </a>
-      <a href="./EN.html" class="lang lang-container">
-        <img src="./img/EN.png" class="lang lang-image"/>
-      </a>
-     </div>
+      <!-- Masthead Avatar Image -->
+      <img class="masthead-avatar mb-5" src="img/profile.png" alt="">
+
+      <!-- Masthead Heading -->
+      <h1 class="masthead-heading text-uppercase mb-0">Eidenis Kasperavičius</h1>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Masthead Subheading -->
+      <p class="masthead-subheading font-weight-light mb-4">Programavimas • Grafinis ir audio dizainas • WEB ir IT sistemų kūrimas</p>
+
+      <div class="container">
+        <a class="btn btn-outline-light btn-social mx-1" href="https://linkedin.com/in/eidenis">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/eidenisk">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1" href="https://instagram.com/eidenisk/">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1" href="https://facebook.com/eidenis.kasperavicius">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class="btn btn-outline-light btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
+          <i class="far fa-envelope"></i>
+        </a>
+      </div>
+
     </div>
-   </section>
+  </header>
 
-   <hr class="m-0">
+  <!-- Portfolio Section -->
+  <section class="page-section portfolio" id="portfolio">
+    <div class="container">
 
-   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="pasiekimai">
-    <div class="my-auto">
-     <h2 class="mb-5">Svarbiausi pasiekimai</h2>
-     <h4><i class="fas fa-medal"></i> III vieta 2018 metų respublikinėje lietuvių kalbos olimpiadoje</h4>
-     <h4><i class="fas fa-lightbulb"></i> „Metų išradėjo” apdovanojimas („Auksinės lemputės 2018” už projektą „GVG Tvarkaraštis”)</h4>
-     <h4><i class="fas fa-trophy"></i> 2018 metų Ernsto Vicherto premija „Jaunasis talentas“</h4>
+      <!-- Portfolio Section Heading -->
+      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projektai</h2>
+
+      <!-- Icon Divider -->
+      <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+      </div>
+
+      <!-- Portfolio Grid Items -->
+      <div class="row">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>GVG Tvarkaraštis</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/gvgtvarkarastis.png" alt="">
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>Kam dabar langas?</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/kamdabarlangas.png" alt="">
+          </div>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>Fizika - tai gyvenimas</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/fizikataigyvenimas.png" alt="">
+          </div>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>Metų išmintis</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/metai.png" alt="">
+          </div>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>Referatai, esė, recenzijos</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/kitiprojektai.png" alt="">
+          </div>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+              <div class="portfolio-item-caption-content text-center text-white">
+                <div>Video projektai</div>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/youtube.png" alt="">
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
     </div>
-   </section>
+  </section>
 
-   <hr class="m-0">
+  <!-- About Section -->
+  <section class="page-section bg-secondary text-white mb-0" id="about">
+    <div class="container" id="about-container">
 
-   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="svarbu">
-    <div class="my-auto">
-     <h2 class="mb-5">Projektai</h2>
-     <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto">
-       <h3 class="mb-0">GVG Tvarkaraštis</h3><hr>
-       <div class="subheading mb-3">Programėlė Android išmaniesiems telefonams</div>
-       <p>Web-scraper tipo programa, iš vaivorykstesgimnazija.lt
-       puslapio nuskaitanti mokinių sąrašą, leidžianti jame daryti paiešką,
-       vėliau rodo pasirinkto mokytojo, mokinio, klasės ar kabineto tvarkaraštį.</p>
-       <p>Parsisiųstą tvarkaraštį programa saugo, jį rodo atskirai kiekvienai
-       dienai arba tik vienos dienos pamokas - valdiklyje (widget), o
-       pasirinkus gali ir rodyti pranešimus (notifications) apie dabartinę
-       ir kitą pamokas.</p>
-       <hr>
-       <div class="subheading mb-3">Responsive (prisitaikančiojo dizaino) svetainė</div>
-       <p>Kurta naudojant Bootstrap šablonus, jQuery ir panašius įrankius.
-         Pritaikyta žiūrėjimui tiek kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
-       <a href="https://eidenisk.github.io/tvarkarastis">Skaityti daugiau...</a>
+      <div class="container-fluid timeline-container">
+        <ul class="timeline">
+            <li><div class="tldate">2018 metai</div></li>
+            <li>
+              <div class="tl-circ"></div>
+              <div class="timeline-panel">
+                <div class="tl-heading">
+                  <h5>III vieta Respublikinėje lietuvių kalbos olimpiadoje</h5>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="tl-circ"></div>
+              <div class="timeline-panel">
+                <div class="tl-heading">
+                  <h5>„Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</h5>
+                </div>
+              </div>
+            </li>
+            <li><div class="tldate">2019 metai</div></li>
+            <li>
+              <div class="tl-circ"></div>
+              <div class="timeline-panel">
+                <div class="tl-heading">
+                  <h5>Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</h5>
+                </div>
+              </div>
+            </li>
+            <li class="timeline-inverted">
+              <div class="tl-circ"></div>
+              <div class="timeline-panel">
+                <div class="tl-heading">
+                  <h5>"Lietuvos Maximalistai 2019" pažangumo stipendija</h5>
+                </div>
+              </div>
+            </li>
+          </ul>
       </div>
-     </div>
-     <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto">
-       <h3 class="mb-0">Fizika - tai Gyvenimas</h3><hr>
-       <div class="subheading mb-3">Fizikos projektinių darbų komandos puslapis</div>
-       <p>Čia rasite mokslinius ir kūrybinius darbus, naudingas nuorodas, nuotraukas ir kt.</p>
-       <p>Moksliniai darbai: referatas "Radijas. Radijo bangos", Herco eksperimento mokslinė analizė, viešosios nuomonės apie elektromagnetines bangas tyrimas.</p>
-       <a href="https://fizika-gyvenimas.github.io">Atidaryti svetainę...</a>
+
+    </div>
+  </section>
+
+  <section class="page-section text-white mb-0"  id="pictures">
+    <div class="container" id="pictures-container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal1">
+            <img class="img-fluid" src="./img/pictures/1p.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal2">
+            <img class="img-fluid" src="./img/pictures/2p.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal3">
+            <img class="img-fluid" src="./img/pictures/3p.jpg" alt="">
+          </div>
+        </div>
       </div>
-     </div>
-     <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto">
-       <h3 class="mb-0">Kam dabar langas?</h3><hr>
-       <div class="subheading mb-3">„Vaivorykštės“ gimnazistams skirtas puslapis, vykdantis greitą mokinių paiešką pagal pamokas</div>
-       <p>Iš pagrindų kurta prisitaikančiojo dizaino svetainė su JS funkcijomis ir komunikacija su serveriu (Firebase).</p>
-       <p>Python "web scrape" programa, nuskaitanti vaivorykstesgimnazija.lt tvarkaraštį (pagal "GVG tvarkaraštis" principus) ir atnaujinanti duomenų bazę pagal nurodytus duomenis (CLI)</p>
-       <a href="https://eidenisk.github.io/kam-dabar-langas">Atidaryti svetainę...</a>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal4">
+            <img class="img-fluid" src="./img/pictures/4p.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal5">
+            <img class="img-fluid" src="./img/pictures/5p.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal6">
+            <img class="img-fluid" src="./img/pictures/6p.jpg" alt="">
+          </div>
+        </div>
       </div>
-     </div>
-     <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto">
-       <h3 class="mb-0" id="m_proj_title">Kai kurie mokykliniai projektai ↓</h3><hr>
-       <div id="m_proj">
-         <div class="subheading mb-3">Referatai, esė, recenzijos...</div>
-         <p>(2016-11) Istorijos referatas „Lietuva vokiečių okupacijos sąlygomis I pasaulinio karo metu“ <a href="./projektai/istorijos_referatas.docx">Siųstis</a><br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal7">
+            <img class="img-fluid" src="./img/pictures/7p.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal8">
+            <img class="img-fluid" src="./img/pictures/8p.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#pictureModal9">
+            <img class="img-fluid" src="./img/pictures/9p.png" alt="">
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- Copyright Section -->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>&copy; Eidenis Kasperavičius 2019</small>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
+  <!-- Portfolio Modals -->
+
+  <!-- Portfolio Modal 1 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">GVG Tvarkaraštis</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" id="gvgtvarkarastis2" src="img/portfolio/gvgtvarkarastis2.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <h4>Programėlė Android išmaniesiems telefonams</h4>
+                <p class="mb-5">Web-scraper tipo programa, iš vaivorykstesgimnazija.lt puslapio nuskaitanti mokinių sąrašą, leidžianti jame daryti paiešką, vėliau rodo pasirinkto mokytojo, mokinio, klasės ar kabineto tvarkaraštį.<br>
+                Parsisiųstą tvarkaraštį programa saugo, jį rodo atskirai kiekvienai dienai arba tik vienos dienos pamokas - valdiklyje (widget), o pasirinkus gali ir rodyti pranešimus (notifications) apie dabartinę ir kitą pamokas.</p>
+                <h4>Responsive (prisitaikančiojo dizaino) svetainė</h4>
+                <p class="mb-5">Kurta naudojant Bootstrap šablonus, jQuery ir panašius įrankius. Pritaikyta žiūrėjimui tiek kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
+                <a href="https://bit.ly/gvgtvarkarastis"><button class="btn btn-primary">
+                  <i class="fas fa-angle-right"></i>
+                  &nbsp;Skaityti daugiau...
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 2 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Kam dabar langas?</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img id="kamdabarlangas2" class="img-fluid rounded mb-5" src="img/portfolio/kamdabarlangas2.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <h4>„Vaivorykštės“ gimnazistams skirtas puslapis, vykdantis greitą mokinių paiešką pagal pamokas</h4>
+                <p class="mb-5">Iš pagrindų kurta prisitaikančiojo dizaino svetainė su JS funkcijomis ir komunikacija su serveriu (Firebase); Python "web scrape" programa, nuskaitanti vaivorykstesgimnazija.lt tvarkaraštį (pagal "GVG tvarkaraštis" principus) ir atnaujinanti duomenų bazę pagal nurodytus duomenis (CLI)</p>
+                <a href="https://bit.ly/kamlangas"><button class="btn btn-primary">
+                  <i class="fas fa-angle-right"></i>
+                  &nbsp;Išbandyti
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 3 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Fizika - tai gyvenimas</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/fizikataigyvenimas2.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <h4>Fizikos projektinių darbų komandos puslapis</h4>
+                <p class="mb-5">Čia rasite mokslinius ir kūrybinius darbus, naudingas nuorodas, nuotraukas ir kt.<br>
+                Moksliniai darbai: referatas "Radijas. Radijo bangos", Herco eksperimento mokslinė analizė, viešosios nuomonės apie elektromagnetines bangas tyrimas.</p>
+                <a href="https://bit.ly/fizika_gyvenimas"><button class="btn btn-primary">
+                  <i class="fas fa-angle-right"></i>
+                  &nbsp;Skaityti daugiau...
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 4 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">„Metų išmintis“</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image -->
+                <img class="img-fluid rounded mb-5" src="img/portfolio/metai2.png" alt="">
+                <!-- Portfolio Modal - Text -->
+                <h4>Kristijonui Donelaičiui ir jo poemai „Metai“ skirta svetainė</h4>
+                <p class="mb-5">Kurta projektinio darbo užduočiai, aktyviai skelbta įvairuose švietimo ir naujienų puslapiuose. Be poemos, jos analizės ir autoriaus gyvenimo faktų taip pat patalpinta dalis kitų projektinių darbų: vaizdo įrašai, prezentacijos bei žaidimai.</p>
+                <a href="https://bit.ly/metu-ismintis"><button class="btn btn-primary">
+                  <i class="fas fa-angle-right"></i>
+                  &nbsp;Skaityti daugiau...
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal 5 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Kiti projektai</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <p>(2016-11) Istorijos referatas „Lietuva vokiečių okupacijos sąlygomis I pasaulinio karo metu“ <a href="./projektai/istorijos_referatas.docx">Siųstis</a><br>
          (2016-12) Spektaklio „Nėra baltų durų“ recenzija <a href="./projektai/spektaklio_recenzija.docx">Siųstis</a><br>
          (2018-02) Lietuvių kalbos viešoji kalba „Antikos įvaizdžiai kultūroje.docx“ <a href="./projektai/antikos_ivaizdziai.docx">Siųstis</a><br>
          (2018-05) Istorijos esė „Antanas Smetona“ <a href="./projektai/antanas_smetona.docx">Siųstis</a> <br>
          (2018-06) Informatikos pristatymas „Vaivorykštės gimnazijos 3D modelis“ <a href="./projektai/3D_pristatymas.pptx">Siųstis</a> <br>
-         (2018-10) Anglų kalbos esė „How long do homan rights last?“ <a href="./projektai/human_rights.docx">Siųstis</a> <br>
+         (2018-10) Anglų kalbos esė „How long do human rights last?“ <a href="./projektai/human_rights.docx">Siųstis</a> <br>
          (2018-10) Fizikos referatas ir pristatymas „Radijas. Radijo bangos“ <a href="https://fizika-gyvenimas.github.io/moksliniai.html">Peržiūrėti</a> </p>
-       </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-     </div>
     </div>
-   </section>
-
-   <hr class="m-0">
-
-   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="video">
-    <div class="my-auto">
-     <h2 class="mb-5">Vaizdo Įrašai</h2>
-     <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto">
-       <h3 class="mb-0">Kaip būti saugiam internete?</h3><hr>
-       <div class="subheading mb-3">Siužetinis filmukas saugaus interneto dienai (2018-01)</div>
-       <div class="embed-responsive embed-responsive-16by9">
-         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/jwm1ql2W44E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-       </div>
-       <hr><h3 class="mb-0">„Vaivorykštės“ gimnazijos 3D modelis</h3><hr>
-       <div class="subheading mb-3">Kūrybinis IT projektas MIK-11 konferencijai (2018-06)</div>
-       <div class="embed-responsive embed-responsive-16by9">
-         <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/BTTIyW0DVbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-
-   <hr class="m-0">
-
-   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="pictures">
-     <div class="my-auto">
-       <h2 class="mb-5">Paveikslėliai</h2>
-         <a href="./img/1.jpg"><img class="img-responsive" src="./img/1p.jpg" /></a>
-         <a href="./img/2.jpg"><img class="img-responsive" src="./img/2p.jpg" /></a>
-         <a href="./img/3.jpg"><img class="img-responsive" src="./img/3p.jpg" /></a>
-         <a href="./img/4.jpg"><img class="img-responsive" src="./img/4p.jpg" /></a>
-         <a href="./img/5.jpg"><img class="img-responsive" src="./img/5p.jpg" /></a>
-         <a href="./img/6.jpg"><img class="img-responsive" src="./img/6p.jpg" /></a>
-         <a href="./img/7.png"><img class="img-responsive" src="./img/7p.png" /></a>
-         <a href="./img/8.png"><img class="img-responsive" src="./img/8p.png" /></a>
-         <a href="./img/9.png"><img class="img-responsive" src="./img/9p.png" /></a>
-       </div>
-     </div>
-   </section>
-
   </div>
-  <p id="copy">© Eidenis Kasperavičius 2018</p>
 
-  <!-- Database function JavaScript -->
-  <script src="js/moment.js"></script>
+  <!-- Portfolio Modal 6 -->
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Video projektai</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <h3 class="mb-0">Kodėl reikia būti atsargiam internete?</h3>
+               <div class="subheading mb-3">Siužetinis filmukas saugaus interneto dienai (2018-01)</div>
+               <div class="embed-responsive embed-responsive-16by9">
+                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/jwm1ql2W44E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               </div>
+               <div class="divider-custom">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon">
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <h3 class="mb-0">„Vaivorykštės“ gimnazijos 3D modelis</h3>
+               <div class="subheading mb-3">Kūrybinis IT projektas MIK-11 konferencijai (2018-06)</div>
+               <div class="embed-responsive embed-responsive-16by9">
+                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/BTTIyW0DVbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="portfolio-modal modal fade" id="pictureModal1" tabindex="-1" role="dialog" aria-labelledby="pictureModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/1.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal2" tabindex="-1" role="dialog" aria-labelledby="pictureModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal3" tabindex="-1" role="dialog" aria-labelledby="pictureModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/3.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal4" tabindex="-1" role="dialog" aria-labelledby="pictureModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/4.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal5" tabindex="-1" role="dialog" aria-labelledby="pictureModal5Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/5.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal6" tabindex="-1" role="dialog" aria-labelledby="pictureModal6Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/6.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal7" tabindex="-1" role="dialog" aria-labelledby="pictureModal7Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/7.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal8" tabindex="-1" role="dialog" aria-labelledby="pictureModal8Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/8.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="pictureModal9" tabindex="-1" role="dialog" aria-labelledby="pictureModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <img class="img-fluid" src="./img/pictures/9.jpg" alt="">
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
@@ -218,11 +633,16 @@
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
   <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
-  <script src="js/database-config.js"></script>
-  <script src="js/database-message-functions.js"></script>
-  <script src="js/database-file-functions.js"></script>
- </body>
+  <script src="js/freelancer.min.js"></script>
+
+  <script src="js/index.js"></script>
+  <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+
+</body>
 
 </html>
