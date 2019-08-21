@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- meta tags -->
+    <title>Eidenio Kasperavičiaus duomenų bazė</title>
+    <link REL="SHORTCUT ICON" href="./img/E.ico">
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Eidenis Kasperavičius">
+    <link href="./css/database.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- script files -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+
+  </head>
+  <body>
+    <span class="full-center main-circle" id="load_messages_button">
+      <div class="login full-center" id="login_row">
+        <input type="password" id="login_password" onkeydown="tryLogIn(event)">
+        <i><p id="login_status"></p></i>
+      </div>
+      <div id="upload_row" class="full-center text-center">
+        <div class="col md-6">
+          <input type="text" id="sendTextInput" placeholder="pavadinimas / tekstas" onkeydown="trySendText(event)"><br>
+          <input type="text" id="sendLinkInput" placeholder="nuoroda" onkeydown="trySendText(event)"><br><br>
+          <!--<input type="file" value="upload" id="fileButton"/>
+          <label for="file">Įkelti failą</label>-->
+
+          <input type="file" name="file" id="fileButton" class="inputfile" />
+          <label for="fileButton">įkelti failą</label>
+        </div>
+      </div>
+      <div class="full-center" id="view_row" align="center">
+        <ul id="load_messages_list"></ul>
+      </div>
+    </span>
+
+    <div id="mode_button">
+      <i class="fas fa-3x fa-cloud-upload-alt" id="up-icon"></i>
+      <i class="fas fa-3x fa-cloud-download-alt" id="down-icon"></i>
+    </div>
+
+    <!-- Database function JavaScript -->
+    <script src="js/moment.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="./js/database.js"></script>
+
+    <script src="js/resume.min.js"></script>
+    <script src="js/database-config.js"></script>
+    <script src="js/database-message-functions.js"></script>
+    <script src="js/database-file-functions.js"></script>
+  </body>
+</html>
