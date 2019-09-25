@@ -31,6 +31,7 @@ function uploadFile(e) {
         updateDatabase(fileRef, fileName.value);
       else updateDatabase(fileRef, file.name);
       loadMessageList();
+      $("#load_messages_button").css("background", "#F3E978");
     }
   );
 }
