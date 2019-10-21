@@ -1,50 +1,129 @@
 <html>
 <style>
+	body {
+	  	background: rgb(191,2,12);
+		background: -moz-linear-gradient(180deg, rgba(191,2,12,0.6978991425671831) 0%, rgba(226,130,3,0.6950980221190038) 100%);
+		background: -webkit-linear-gradient(180deg, rgba(191,2,12,0.6978991425671831) 0%, rgba(226,130,3,0.6950980221190038) 100%);
+		background: linear-gradient(180deg, rgba(191,2,12,0.6978991425671831) 0%, rgba(226,130,3,0.6950980221190038) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#bf020c",endColorstr="#e28203",GradientType=1); 
+		background-attachment:fixed;
+
+		font-family: sans-serif;
+	}
+
+	.container {
+		align-content: center;
+		width: 80%;
+		background: rgba(255,255,255,0.5);
+		margin: auto;
+		padding: 5%;
+	}
+
+	#title {
+		margin-top: 5%;
+		padding-top: 1%;
+		padding-bottom: 3%;
+	}
+	#goals {
+		margin-top: 5%;
+		margin-bottom: 5%;
+	}
+	#credits {
+		margin-top: 5%;
+		margin-bottom: 5%;
+		padding-top: 1%;
+		padding-bottom: 1%;
+	}
+
 	img {
 		border: 0;
 		margin: 5px;
 		padding: 0;
 	}
+	.img1 {
+		width: 100%;
+	}
+	.img2 {
+		width: 48%;
+	}
+
+	table {
+		width: 100%;
+		vertical-align: middle;
+		font-size: 11pt;
+	}
+	td {
+		width: 50%;
+		text-align: center;
+	}
+
+	#alternative {
+		font-size: 12pt;
+	}
+	a {
+		text-decoration: none;
+		color: rgb(255,128,0);
+	}
+	#mainLink {
+	   background: rgb(255,128,0);
+		background: -moz-linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		background: -webkit-linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		background: linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8000",endColorstr="#bf020c",GradientType=1);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+
+	  	font-size: 60px;
+	  	font-weight: bold;
+	  	font-family: Rubik, Lato, lucida grande, lucida sans unicode, Tahoma, sans-serif;
+	  	margin-bottom: 0;
+	}
+
+	
 </style>
 <body style="text-align:center">
-	<h2>„Tėvynės Sargas“ - žaidimo parsisiuntimas</h2>
 
-	<h1><a href="./downloads/tevynes_sargas.rar">SIŲSTIS</a></h1>
-	<p><i>.zip faile - žaidimas ir jo nuotraukos</i></p>
+	<div id="title" class="container">
+		<img src="./img/tevynes_sargas/logo.png" /><br>
 
-	<br>
+		<table>
+			<tr>
+				<td>
+					<a id="mainLink" href="./downloads/tevynes_sargas.rar">SIŲSTIS</a>
+					<p style=""><i>.zip faile - žaidimas ir jo nuotraukos</i></p>
+				</td>
+				<td>
+					<p id="alternative">Alternatyvūs parsisiuntimai (mirrors):<br>
+					<a href="https://www16.zippyshare.com/v/Ppn25Rud/file.html">Zippyshare</a><br>
+					<a href="https://drive.google.com/open?id=1xIr35KHKkH-CS6mGTF7RA1PDu5MR42Zw">Google Drive</a><br>
+					Jei neveikia nuorodos, kreipkitės el. paštu<br><i>eidenis.gargzdai eta gmail.com</i></p>
+				</td>
+			</tr>
+		</table>	
+	</div>
 
-	<p>Alternatyvūs parsisiuntimai (mirrors)</p>
-	<a href="https://www16.zippyshare.com/v/Ppn25Rud/file.html">Zippyshare</a><br>
-	<a href="https://drive.google.com/open?id=1xIr35KHKkH-CS6mGTF7RA1PDu5MR42Zw">Google Drive</a><br>
-	<p>Jei neveikia nuorodos, kreipkitės el. paštu eidenis.gargzdai eta gmail.com</p>
+	<div id="goals" class="container">
+		<p><b>Žaidimo tikslas:</b><br>pasienio kontrolės poste vykdyti mašinų patikrą: sulaikyti mašinas, vežančias kontrabandą, nelegalius krovinius ar neturinčias tvarkingų techninių dokumentų.</p>
+		<p><b>Žaidimo metu:</b><br>susipažįstama su muitinės (pasienio kontrolės pareigūnų) veikla, jų darbo specifika, lavinamas pastabumas, taip pat ugdomas patriotiškumas, pagarba valstybės pareigūnams ir kt.</p>
+	</div>
 
-	<br>
-	<hr>
-	<br>
+	<div id="photos" class="container">
+		<img class="img1" src="./img/tevynes_sargas/Tėvynės Sargas (1).jpg" />
+		<img class="img1" src="./img/tevynes_sargas/Tėvynės Sargas (2).jpg" />
+		<img class="img1" src="./img/tevynes_sargas/Tėvynės Sargas (3).jpg" />
 
-	<p><b>Žaidimo tikslas</b> - pasienio kontrolės poste vykdyti mašinų patikrą: sulaikyti mašinas, vežančias kontrabandą, nelegalius krovinius ar neturinčias tvarkingų techninių dokumentų.</p>
-	<p><b>Žaidimo metu </b>susipažįstama su muitinės (pasienio kontrolės pareigūnų) veikla, jų darbo specifika, lavinamas pastabumas, taip pat ugdomas patriotiškumas, pagarba valstybės pareigūnams ir kt.</p>
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (1).png" />
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (2).png" />	
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (3).png" />
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (4).png" />
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (5).png" />
+		<img class="img2" src="./img/tevynes_sargas/Tėvynės Sargas (6).png" />
 
-	<br>
-	<hr>
-	<br>
+		<img class="img1" src="./img/tevynes_sargas/Tėvynės Sargas (7).png" />
+	</div>
 
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (1).jpg" width="1000"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (2).jpg" width="1000"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (3).jpg" width="1000"/>
-
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (1).png" width="500"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (2).png" width="500"/>	
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (3).png" width="500"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (4).png" width="500"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (5).png" width="500"/>
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (6).png" width="500"/>
-
-	<img src="./img/tevynes_sargas/Tėvynės Sargas (7).png" width="1000"/>
-
-	<hr>
-
-	<p>© 2019<i><br>Eidenis Kasperavičius (webmaster)<br>Oskaras Daukintis<br>Lukas Rimkus<br>Žanas Zabėlius<br>Gargždų „Vaivorykštės“ gimnazija</i></p>
+	<div id="credits" class="container">
+		<p>© 2019<br>Eidenis Kasperavičius <i>(webmaster)</i><br>Oskaras Daukintis<br>Lukas Rimkus<br>Žanas Zabėlius<br>Gargždų „Vaivorykštės“ gimnazija</p>
+	</div>
 </body>
 </html>
