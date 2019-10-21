@@ -67,7 +67,7 @@
 	}
 
 	#alternative {
-		font-size: 12pt;
+		font-size: 11pt;
 	}
 	a {
 		text-decoration: none;
@@ -85,6 +85,20 @@
 	  	font-size: 60px;
 	  	font-weight: bold;
 	  	font-family: Rubik, Lato, lucida grande, lucida sans unicode, Tahoma, sans-serif;
+	  	margin-bottom: 0;
+	}
+
+	#playLink {
+		background: rgb(255,128,0);
+		background: -moz-linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		background: -webkit-linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		background: linear-gradient(180deg, rgba(255,128,0,1) 0%, rgba(191,2,12,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8000",endColorstr="#bf020c",GradientType=1);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  font-size: 60px;
+	  	font-weight: bold;
+	  	font-family: Roboto, sans-serif;
 	  	margin-bottom: 0;
 	}
 
@@ -106,20 +120,32 @@
 			width: 48%;
 		}
 	}
+
+	hr {
+		width: 60%;
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: rgb(150,150,150); /* old IE */
+    background-color: rgb(150,150,150); /* Modern Browsers */
+
+	}
 	
 </style>
 <body style="text-align:center">
-
 	<div id="title" class="container">
 		<img id="mainImg" src="./img/tevynes_sargas/logo.png" /><br>
-
 		<table id="desktopDownloads">
 			<tr>
 				<td>
-					<a id="mainLink" href="./downloads/tevynes_sargas.rar">SIŲSTIS</a>
-					<p style=""><i>.zip faile - žaidimas ir jo nuotraukos</i></p>
+					<a id="mainLink" href="./tevynes_sargas_zaidimas.html">ŽAISTI</a>
+					<p style=""><i>būtina įsirašyti „WebGL“</i></p>
 				</td>
 				<td>
+					<a id="mainLink" style="font-size:40px;margin-bottom:0px" href="./downloads/tevynes_sargas.rar">SIŲSTIS</a>
+					<p style="margin-top:0px"><i>.zip faile - žaidimas ir jo nuotraukos</i></p>
+
+					<hr>
 					<p id="alternative">Alternatyvūs parsisiuntimai (mirrors):<br>
 					<a href="https://www16.zippyshare.com/v/Ppn25Rud/file.html">Zippyshare</a><br>
 					<a href="https://drive.google.com/open?id=1xIr35KHKkH-CS6mGTF7RA1PDu5MR42Zw">Google Drive</a><br>
@@ -128,6 +154,12 @@
 			</tr>
 		</table>	
 		<table id="mobileDownloads">
+			<tr>
+				<td>
+					<a id="mainLink" href="./tevynes_sargas_zaidimas.html">ŽAISTI</a>
+					<p style="margin-bottom: 40px"><i>būtina įsirašyti „WebGL“</i></p>
+				</td>
+			</tr>
 			<tr>
 				<td>
 					<a id="mainLink" href="./downloads/tevynes_sargas.rar">SIŲSTIS</a>
