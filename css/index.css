@@ -99,3 +99,7 @@
 .nav-link {
 	background: rgba(0,0,0,0) !important;
 }
+
+html {
+	scroll-behavior: smooth;
+}
