@@ -25,28 +25,6 @@
 	color: white;
 }
 
-/*#image-section-image {
-	visibility: hidden;
-	width: 50%;
-}*/
-
-.masthead {
-	background-image: url("../img/pictures/4.jpg");
-	background-size: cover;
-}
-
-/*#pictures {
-	background-image: url("../img/pictures/1.jpg");
-	background-size: cover;
-	box-shadow: inset 0px 11px 20px -8px black,
-				inset 0px -11px 20px -8px black;
-}*/
-
-.masthead-avatar {
-	border: 1px solid white;
-	border-radius: 320px;
-}
-
 #pictures-container img{
 	width: 100%;
 	padding-bottom: 5px;
@@ -58,34 +36,8 @@
 	padding-bottom: 0;
 }
 
-/*#img-display-container {
-	position: relative;
-	height: 100vh;
-	width: 100vw;
-	display: none;
-}
-
-#img-display {
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	border: 0;
-	margin: auto;
-}*/
-
 .portfolio-modal img {
 	margin:auto;
-}
-
-#pictures img {
-	transition: all .2s;
-}
-
-#pictures img:hover {
-	webkit-filter: blur(3px);
-	filter: blur(3px);
 }
 
 .masthead-subheading {
@@ -98,13 +50,74 @@
 }
 
 .portfolio-item-caption {
-	background: rgba(44, 62, 80, .9) !important;
-}
-
-.nav-link {
-	background: rgba(0,0,0,0) !important;
+	/*background: rgba(44, 62, 80, .9) !important;*/
+	background: rgba(255, 255, 255, .8) !important;
+	color: #988626 !important;
+	font-weight: bold;
+	font-family: "Segoe UI";
+	font-size: 3pt;
 }
 
 html {
 	scroll-behavior: smooth;
+}
+
+body {
+	background-image: url("../img/pictures/background.jpg");
+	background-size: cover;
+}
+
+.btn-outline-olive, .modal-body button {
+    border-color: #988626;
+    background: #fff;
+}
+.btn-outline-olive:hover, .modal-body button:hover {
+	background: #988626;
+	color: #fff;
+	border-color: #988626;
+}
+
+a, #button-down, .btn-outline-olive, .text-olive, .portfolio-modal span, .portfolio-modal-title, .modal-body button, .portfolio-modal h4, .portfolio-modal h3 {
+	color: #988626;
+}
+
+a:hover {
+	color: #c4740c;
+}
+
+#button-down {
+	font-size: 5rem;
+}
+
+#button-down-section {
+	margin-top: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+#misc_projects_row {
+	margin: auto;
+}
+
+.portfolio-item {
+	margin-top: 1rem !important;
+}
+
+.masthead {
+	padding-bottom: 3rem;
+}
+
+.portfolio-modal-title {
+	margin-bottom: 4rem !important;
+}
+
+.portfolio-modal h3 {
+	margin-top: 2rem;
+}
+
+a {
+	color: #988626
+}
+a: hover {
+
 }
