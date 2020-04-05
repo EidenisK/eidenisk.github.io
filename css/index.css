@@ -69,7 +69,7 @@ body {
 
 .btn-outline-olive, .modal-body button {
     border-color: #988626;
-    background: #fff;
+    background: transparent;
 }
 .btn-outline-olive:hover, .modal-body button:hover {
 	background: #988626;
