@@ -118,6 +118,33 @@ a:hover {
 a {
 	color: #988626
 }
-a: hover {
 
+.modal-body img {
+}
+
+.skills-div {
+	display:block;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.skills-span {
+	/*background: #fff;
+	border: 2px solid #988626;*/
+	color: #988626;
+	font-family: Montserrat;
+	font-size: 2rem;
+	/*border-radius: .5rem;*/
+}
+
+#csharp-icon {
+	 display:inline;
+	 font-weight: bold;
+}
+
+.image-caption {
+	color: gray;
+	text-align: right;
+	width: 100%;
+	font-size: .75rem;
 }
