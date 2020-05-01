@@ -88,7 +88,7 @@ function loadMessageList() {
           text += '<a href="' + link + '">' + name + "</a>";
         else text += name;
 
-        text += "</b><br>" + date + '<br><u onclick="';
+        text += "</b><br>" + '<div class="databaseDate">' + date + '</div><u onclick="';
 
         if(url != "sample")
           text += 'delete_files(' + "'" + doc.id + "','" + name + "'";
@@ -98,7 +98,7 @@ function loadMessageList() {
         text += ')">IŠTRINTI</u>';
 
         if(url != "sample")
-          text += ', <a href="' + url + '">SIŲSTIS</a>';
+          text += ', <a href="' + url + '">SIŲSTIS</a>'; 
         text += "</li>"
 
         load_messages_list.innerHTML = text + load_messages_list.innerHTML;

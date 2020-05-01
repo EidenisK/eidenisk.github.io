@@ -131,5 +131,12 @@ a {
 }
 
 .lyginis {
-  
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+.databaseDate {
+  color: #aaaaaa;
 }
