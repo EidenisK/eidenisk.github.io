@@ -18,16 +18,16 @@ const siuntiniaiList = document.getElementById("siuntiniaiList");
 $(document).ready(function() {
 	firestore.collection('siuntiniai').get().then(function(snap) {
 	    snap.forEach(function(doc) {
-	    if(doc.data().name != "sample") {
-	      var link = doc.data().link, name = doc.data().name, date = doc.data().date, url = doc.data().downloadURL, id = doc.id;
+			var data = doc.id;
+		    var pavadinimas = doc.data().pavadinimas;
+		    var nuoroda = doc.data().nuoroda;
 
-	      var text = "<li>" + '<a href="' + url + '">' + name + "</a>";
-	      text += ' <div class="siuntiniaiDate">(' + date.substring(0, 10) + ')</div>';
-	      text += "</li>"
+		    var text = "<li>" + '<a href="' + nuoroda + '">' + pavadinimas + "</a>";
+	      	text += ' <div class="siuntiniaiDate">(' + data.substring(0, 10) + ')</div>';
+	      	text += "</li>"
 
-	      siuntiniaiList.innerHTML = text + siuntiniaiList.innerHTML;
-	      document.getElementById("siuntiniai").style.display = "block";
-	    }
+     	 	siuntiniaiList.innerHTML = text + siuntiniaiList.innerHTML;
+	      	document.getElementById("siuntiniai").style.display = "block";
 	  });
   });
 });

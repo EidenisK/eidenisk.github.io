@@ -92,7 +92,7 @@ input[type=password], input[type=text] {
   color: white;
 }
 
-#up-icon {
+#up_icon {
   display: none;
 }
 
@@ -141,10 +141,10 @@ li {
   color: #aaa;
 }
 
-#siuntiniaiCheckbox {
+#siuntiniai_checkbox {
   margin-bottom: 1rem;
 }
-#siuntiniaiLabel {
+#siuntiniai_label {
   color: #aaaaaa;
 }
 

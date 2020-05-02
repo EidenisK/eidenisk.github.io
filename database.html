@@ -7,9 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Eidenis Kasperavičius">
+
+    <!-- style files -->
     <link href="./css/database.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
     <!-- script files -->
@@ -25,14 +26,15 @@
         <input type="password" id="login_password" onkeydown="tryLogIn(event)">
         <i><p id="login_status"></p></i>
       </div>
-      <div id="upload_row" class="full-center text-center">
+
+      <div class="full-center text-center" id="upload_row">
         <div class="col md-6">
-          <input type="text" id="sendTextInput" placeholder="pavadinimas / tekstas" onkeydown="trySendText(event)"><br>
-          <input type="text" id="sendLinkInput" placeholder="nuoroda" onkeydown="trySendText(event)"><br><br>
-          <input type="checkbox" id="siuntiniaiCheckbox">
-          <label id="siuntiniaiLabel" for="siuntiniaiCheckbox">Prieinamas viešai</label><br>
-          <input type="file" name="file" id="fileButton" class="inputfile"/>
-          <label for="fileButton">įkelti failą</label>
+          <input id="send_text_input" type="text" placeholder="pavadinimas / tekstas" onkeydown="trySendText(event)"><br>
+          <input id="send_link_input" type="text" placeholder="nuoroda" onkeydown="trySendText(event)"><br><br>
+          <input id="siuntiniai_checkbox" type="checkbox">
+          <label id="siuntiniai_label" for="siuntiniaiCheckbox">Prieinamas viešai</label><br>
+          <input id="file_button" type="file" name="file" class="inputfile"/>
+          <label for="file_button">įkelti failą</label>
         </div>
       </div>
       <div class="full-center" id="view_row" align="center">
@@ -41,8 +43,8 @@
     </span>
 
     <div id="mode_button">
-      <i class="fas fa-3x fa-cloud-upload-alt" id="up-icon"></i>
-      <i class="fas fa-3x fa-cloud-download-alt" id="down-icon"></i>
+      <i class="fas fa-3x fa-cloud-upload-alt" id="up_icon"></i>
+      <i class="fas fa-3x fa-cloud-download-alt" id="down_icon"></i>
     </div>
 
     <!-- Database function JavaScript -->
@@ -56,10 +58,8 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="./js/database.js"></script>
-
-    <script src="js/database-config.js"></script>
-    <script src="js/database-message-functions.js"></script>
-    <script src="js/database-file-functions.js"></script>
+    <script src="js/database-config-login.js"></script>
+    <script src="js/database-download.js"></script>
+    <script src="js/database-upload-delete.js"></script>    
   </body>
 </html>
