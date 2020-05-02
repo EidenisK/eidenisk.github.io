@@ -138,5 +138,21 @@ li {
 }
 
 .databaseDate {
+  color: #aaa;
+}
+
+#siuntiniaiCheckbox {
+  margin-bottom: 1rem;
+}
+#siuntiniaiLabel {
   color: #aaaaaa;
+}
+
+.tagPublic {
+  display: inline;
+  color: gold;
+}
+
+li hr {
+  width: 80%;
 }

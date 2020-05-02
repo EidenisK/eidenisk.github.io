@@ -22,6 +22,12 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
+  <!-- script files -->
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
@@ -245,14 +251,12 @@
     </div>
   </section>
 
-  <!----------------------   FAILAI   --------------------------->
   <section class="page-section portfolio text-olive mb-0" id="siuntiniai">
-    <div class="container" id="about-container">
-      <h4>Siuntiniai</h4>
-      <ul id="siuntiniaiSarasas"></ul>
+    <h2>Siuntiniai</h2>
+    <div class="container" id="siuntiniai-container">
+      <ul id="siuntiniaiList"></ul>
     </div>
   </section>
-  <!------------------------------------------------------------->
 
   <div class="text-white image-caption"><i>Fonas - Dave platformoje Unsplash</i></div>
 
@@ -598,6 +602,7 @@
   <script src="js/freelancer.min.js"></script>
   <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
 
+  <script src="js/index.js"></script>
 </body>
 
 </html>

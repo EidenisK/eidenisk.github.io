@@ -73,39 +73,55 @@ $("#mode_button").click(function(e) {
 
 function loadMessageList() {
   firestore.collection('openData').get().then(function(snap) {
-    var idx = 1;
-    load_messages_list.innerHTML = "";
-    snap.forEach(function(doc) {
-      if(doc.data().name != "sample") {
-        var link = doc.data().link, name = doc.data().name, date = doc.data().date, url = doc.data().downloadURL, id = doc.id;
+    addCollectionToList(snap, false);
+  });
 
-        var text = "<li";
-        if(idx % 2 == 0)
-          text += ' class="lyginis"';
-        text += "><b>";
+  firestore.collection('siuntiniai').get().then(function(snap) {
+    addCollectionToList(snap, true);
+  });  
+}
 
-        if(link != "sample")
-          text += '<a href="' + link + '">' + name + "</a>";
-        else text += name;
-
-        text += "</b><br>" + '<div class="databaseDate">' + date + '</div><u onclick="';
-
-        if(url != "sample")
-          text += 'delete_files(' + "'" + doc.id + "','" + name + "'";
-        else
-          text += 'delete_messages(' + "'" + doc.id + "'";
-
-        text += ')">IŠTRINTI</u>';
-
-        if(url != "sample")
-          text += ', <a href="' + url + '">SIŲSTIS</a>'; 
-        text += "</li>"
-
-        load_messages_list.innerHTML = text + load_messages_list.innerHTML;
-
-        idx++;
+function addCollectionToList(snap, isPublic)
+{
+  var idx = 1;
+  if(!isPublic) load_messages_list.innerHTML = "";
+  snap.forEach(function(doc) {
+    if(doc.data().name != "sample") {
+      if(idx == 1 && isPublic) {
+        load_messages_list.innerHTML = "<li><hr></li>" + load_messages_list.innerHTML;
       }
-    });
+
+      var link = doc.data().link, name = doc.data().name, date = doc.data().date, url = doc.data().downloadURL, id = doc.id;
+
+      var text = "<li";
+      if(isPublic) text += ' class="public"';
+      if(idx % 2 == 0)
+        text += ' class="lyginis"';
+      text += "><b>";
+
+      if(link != "sample")
+        text += '<a href="' + link + '">' + name + "</a>";
+      else text += name;
+
+      text += "</b><br>" + '<div class="databaseDate">' + date + '</div><a href="#" onclick="';
+
+      if(url != "sample")
+        text += 'delete_files(' + "'" + doc.id + "','" + name + "'," + (isPublic ? "true" : "false");
+      else
+        text += 'delete_messages(' + "'" + doc.id + "'";
+
+      text += ')">IŠTRINTI</a>';
+
+      if(url != "sample")
+        text += ', <a href="' + url + '">SIŲSTIS</a>'; 
+      if(isPublic)
+        text += ' <div class="tagPublic">(VIEŠAS)</div>';
+      text += "</li>"
+
+      load_messages_list.innerHTML = text + load_messages_list.innerHTML;
+
+      idx++;
+    }
   });
 }
 

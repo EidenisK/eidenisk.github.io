@@ -10,8 +10,10 @@ var fileName = document.querySelector('#sendTextInput');
 fileButton.addEventListener('change', function(e) { uploadFile(e) });
 
 function uploadFile(e) {
+  var public = document.getElementById("siuntiniaiCheckbox").checked;
+
   var file = e.target.files[0];
-  var fileRef = storageRef.ref("openData/" + file.name);
+  var fileRef = storageRef.ref( (public ? "siuntiniai/": "openData/") + file.name);
   $("#load_messages_button").css("background", "white");
 
   var task = fileRef.put(file);
@@ -37,8 +39,10 @@ function uploadFile(e) {
 }
 
 function updateDatabase(fileRef, name) {
+  var public = document.getElementById("siuntiniaiCheckbox").checked;
+
   var date = moment().format('YYYY-MM-DD HH:mm:ss');
-  var docRef = firestore.doc("openData/" + date);
+  var docRef = firestore.doc( (public ? "siuntiniai/" : "openData/") + date);
   fileRef.getDownloadURL().then(function(url) {
     docRef.set( {
       name: name,
@@ -59,8 +63,8 @@ function updateDatabase(fileRef, name) {
 //-----------------DELETE---------------------
 //--------------------------------------------
 
-function delete_files(database_file_id, storage_file_name) {
+function delete_files(database_file_id, storage_file_name, is_public) {
   if (!firebase.auth().currentUser) return;
-  firestore.doc("openData/" + database_file_id).delete();
-  storageRef.ref('openData/' + storage_file_name).delete().then(loadMessageList());
+  firestore.doc((is_public ? "siuntiniai/" : "openData/") + database_file_id).delete();
+  storageRef.ref((is_public ? "siuntiniai/" : 'openData/') + storage_file_name).delete().then(loadMessageList());
 }

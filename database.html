@@ -29,10 +29,9 @@
         <div class="col md-6">
           <input type="text" id="sendTextInput" placeholder="pavadinimas / tekstas" onkeydown="trySendText(event)"><br>
           <input type="text" id="sendLinkInput" placeholder="nuoroda" onkeydown="trySendText(event)"><br><br>
-          <!--<input type="file" value="upload" id="fileButton"/>
-          <label for="file">Įkelti failą</label>-->
-
-          <input type="file" name="file" id="fileButton" class="inputfile" />
+          <input type="checkbox" id="siuntiniaiCheckbox">
+          <label id="siuntiniaiLabel" for="siuntiniaiCheckbox">Prieinamas viešai</label><br>
+          <input type="file" name="file" id="fileButton" class="inputfile"/>
           <label for="fileButton">įkelti failą</label>
         </div>
       </div>

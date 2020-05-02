@@ -50,7 +50,6 @@
 }
 
 .portfolio-item-caption {
-	/*background: rgba(44, 62, 80, .9) !important;*/
 	background: rgba(255, 255, 255, .8) !important;
 	color: #988626 !important;
 	font-weight: bold;
@@ -129,12 +128,9 @@ a {
 }
 
 .skills-span {
-	/*background: #fff;
-	border: 2px solid #988626;*/
 	color: #988626;
 	font-family: Montserrat;
 	font-size: 2rem;
-	/*border-radius: .5rem;*/
 }
 
 #csharp-icon {
@@ -156,4 +152,36 @@ a {
 	.masthead-subheading {
 		font-size: 1rem !important;
 	}
+}
+
+#siuntiniai {
+	display:none;
+	/*border: 2px solid white;*/
+	text-align: center;
+	background: rgba(0, 0, 0, 0.3);
+	width: 80%;
+	margin: auto;
+	padding: 1rem;
+	color: #fff;
+	margin-bottom: 2rem !important;
+}
+#siuntiniai h2 {
+	margin-bottom: 1rem;
+}
+#siuntiniai li {
+	list-style-type: none;
+	text-align: center;
+}
+#siuntiniai ul {
+	margin:0;
+	padding:0;
+}
+#siuntiniai li a {
+	color: #fff !important;
+	text-decoration: none;
+}
+.siuntiniaiDate {
+	display: inline;
+	color: #ddd;
+	font-style: italic;
 }

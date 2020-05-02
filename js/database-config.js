@@ -15,6 +15,7 @@ firestore.settings(settings)
 
 firebase.auth().signOut();
 $("#upload_row").hide();
+document.getElementById("siuntiniaiCheckbox").checked = false;
 
 //--------------------------------------------
 //-----------------LOGIN----------------------
