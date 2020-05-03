@@ -41,7 +41,7 @@ function uploadFile(e) {
   	var date = moment().format('YYYY-MM-DD HH:mm:ss');
   	var fileRef = storageRef.ref(userID + "/" + date + file.name);
   	setBg("white");
-
+  	
   	var task = fileRef.put(file);
   	task.on('state_changed',
     	function progress(snapshot) {
@@ -54,13 +54,11 @@ function uploadFile(e) {
     function complete() {
 		showSuccess("DONE upload");
   		updateDatabase(fileRef, file.name, inputText.value, date);
-      	loadMessageList();
     });
 }
 
 function updateDatabase(fileRef, filename, name, date) {
   var docRef = firestore.doc(userID + "/" + date);
-
   fileRef.getDownloadURL().then(function(url) {
     docRef.set( {
 		tipas: "dokumentas",
@@ -84,7 +82,7 @@ function delete_entry(document_id, is_public) {
 	if (!firebase.auth().currentUser) return;
 	firestore.doc( userID + "/" + document_id).get().then(function(doc) {
 		if(doc.data().tipas == "dokumentas")
-			storageRef.ref(userID + "/" + document_id + doc.data().dokumento_pavadinimase).delete();
+			storageRef.ref(userID + "/" + document_id + doc.data().dokumento_pavadinimas).delete();
 		firestore.doc( userID + "/" + document_id).delete();
 		loadMessageList();
 	});
