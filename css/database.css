@@ -63,6 +63,16 @@ input[type=password], input[type=text] {
   background: none;
 }
 
+#login_row {
+  text-align: center;
+}
+
+#login_row input {
+  max-width: 250px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 #mode_button {
   position: absolute;
   width: 12vh;

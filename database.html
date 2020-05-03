@@ -23,16 +23,14 @@
   <body>
     <span class="full-center main-circle" id="load_messages_button">
       <div class="login full-center" id="login_row">
+        <input type="text" id="login_email" onkeydown="tryLogIn(event)"><br>
         <input type="password" id="login_password" onkeydown="tryLogIn(event)">
-        <i><p id="login_status"></p></i>
       </div>
 
       <div class="full-center text-center" id="upload_row">
         <div class="col md-6">
           <input id="send_text_input" type="text" placeholder="pavadinimas / tekstas" onkeydown="trySendText(event)"><br>
           <input id="send_link_input" type="text" placeholder="nuoroda" onkeydown="trySendText(event)"><br><br>
-          <input id="siuntiniai_checkbox" type="checkbox">
-          <label id="siuntiniai_label" for="siuntiniaiCheckbox">Prieinamas viešai</label><br>
           <input id="file_button" type="file" name="file" class="inputfile"/>
           <label for="file_button">įkelti failą</label>
         </div>

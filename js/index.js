@@ -16,15 +16,14 @@ firestore.settings(settings)
 const siuntiniaiList = document.getElementById("siuntiniaiList");
 
 $(document).ready(function() {
-	firestore.collection('siuntiniai').get().then(function(snap) {
+	firestore.collection('LIMROM1z1TVnRoLJs9Kp6JMOn8a2').get().then(function(snap) {
 	    snap.forEach(function(doc) {
 			var data = doc.id;
 		    var pavadinimas = doc.data().pavadinimas;
 		    var nuoroda = doc.data().nuoroda;
 
 		    var text = "<li>" + '<a href="' + nuoroda + '">' + pavadinimas + "</a>";
-	      	text += ' <div class="siuntiniaiDate">(' + data.substring(0, 10) + ')</div>';
-	      	text += "</li>"
+	      	text += ' <div class="siuntiniaiDate">(' + data.substring(0, 10) + ')</div></li>';
 
      	 	siuntiniaiList.innerHTML = text + siuntiniaiList.innerHTML;
 	      	document.getElementById("siuntiniai").style.display = "block";

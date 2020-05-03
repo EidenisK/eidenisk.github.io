@@ -19,7 +19,6 @@ $(document).ready(function() {
 	//on document load - set up interface
 	firebase.auth().signOut();
 	$("#upload_row").hide();
-	document.getElementById("siuntiniai_checkbox").checked = false;
 
   	var child = document.querySelector("#load_messages_list");
   	child.style.paddingRight = child.offsetWidth - child.clientWidth + "px";
@@ -28,34 +27,36 @@ $(document).ready(function() {
 //---------------------------------------------------
 //---------------------- LOGIN ----------------------
 //---------------------------------------------------
+const emailField = document.getElementById("login_email");
+const passwordField = document.getElementById("login_password");
+var userID = "null";
+
 function tryLogIn(event) {
-	var loginPassword = document.getElementById("login_password");
-  	var loginStatus = document.querySelector('#login_status');
+	if(event.key != "Enter" || firebase.auth().currentUser) return;
+	if(emailField.value == "" || passwordField.value == "") return;
 
-  	if(event.key == "Enter" && !firebase.auth().currentUser && loginPassword.value != null && loginPassword.value != "") {
-    	var pass = loginPassword.value;
-	    firebase.auth().signInWithEmailAndPassword('eidenis.gargzdai@gmail.com', pass).then(function() {
-	      	//SUCCESSFUL LOGIN
+    firebase.auth().signInWithEmailAndPassword(
+    	emailField.value, passwordField.value).then(function() {
+      	//SUCCESSFUL LOGIN
 
-	      	loginStatus.innerHTML = "Būsena: PRISIJUNGTA";
-	      	$('#view_row').show();
-	      	$('#login_row').hide();
-	      	$("#mode_button").show();
-	      	loadMessageList();
-	    }).catch(function(error) {
-			//UNSUCCESSFUL LOGIN
+      	$('#view_row').show();
+      	$('#login_row').hide();
+      	$("#mode_button").show();
 
-	      	$("#login_password").css("border-bottom", "2px solid red");
-	      	console.log(error.message);
-    	});
-  	}
+      	userID = firebase.auth().currentUser.uid;
+      	loadMessageList();
+    }).catch(function(error) {
+		//UNSUCCESSFUL LOGIN
+
+      	$("#login_password").css("border-bottom", "2px solid red");
+      	$("#login_email").css("border-bottom", "2px solid red");
+      	console.log(error.message);
+	});
 }
 
 //---------------------------------------------------
 //------------ TOGGLE UPLOAD & DOWNLOAD -------------
 //---------------------------------------------------
-var view_mode = true;
-
 $("#mode_button").click(function(e) {
   	if (!firebase.auth().currentUser) return;
 
@@ -65,8 +66,7 @@ $("#mode_button").click(function(e) {
 	$("#down_icon").toggle();
 	$("#load_messages_button").css("background", "white");
 
-	if(!view_mode) loadMessageList();
-  	view_mode = !view_mode;
+	if($("#view_row").is(":visible")) loadMessageList();
 });
 
 //---------------------------------------------------
