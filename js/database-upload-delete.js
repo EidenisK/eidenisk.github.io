@@ -39,7 +39,7 @@ document.querySelector('#file_button').addEventListener('change', function(e) { 
 function uploadFile(e) {
   	var file = e.target.files[0];
   	var date = moment().format('YYYY-MM-DD HH:mm:ss');
-  	var fileRef = storageRef.ref(userID + "/" + date);
+  	var fileRef = storageRef.ref(userID + "/" + date + file.name);
   	setBg("white");
 
   	var task = fileRef.put(file);
@@ -65,7 +65,8 @@ function updateDatabase(fileRef, filename, name, date) {
     docRef.set( {
 		tipas: "dokumentas",
   		nuoroda: url,
-  		pavadinimas: (name == "" || name == "pavadinimas / tekstas" ? filename : name)
+  		pavadinimas: (name == "" || name == "pavadinimas / tekstas" ? filename : name),
+    	dokumento_pavadinimas: filename
     }).then(function() {
     	showSuccess("DONE update");
     	setBg("white");
@@ -83,7 +84,7 @@ function delete_entry(document_id, is_public) {
 	if (!firebase.auth().currentUser) return;
 	firestore.doc( userID + "/" + document_id).get().then(function(doc) {
 		if(doc.data().tipas == "dokumentas")
-			storageRef.ref(userID + "/" + document_id).delete();
+			storageRef.ref(userID + "/" + document_id + doc.data().dokumento_pavadinimase).delete();
 		firestore.doc( userID + "/" + document_id).delete();
 		loadMessageList();
 	});
