@@ -15,6 +15,8 @@ firestore.settings(settings)
 
 const siuntiniaiList = document.getElementById("siuntiniaiList");
 
+var rodytiSiuntinius = false;
+
 $(document).ready(function() {
 	firestore.collection('LIMROM1z1TVnRoLJs9Kp6JMOn8a2').get().then(function(snap) {
 	    snap.forEach(function(doc) {
@@ -27,6 +29,7 @@ $(document).ready(function() {
 
      	 	siuntiniaiList.innerHTML = text + siuntiniaiList.innerHTML;
 	      	document.getElementById("siuntiniai").style.display = "block";
+	      	rodytiSiuntinius = true;
 	  });
   });
 });
@@ -49,7 +52,8 @@ function switchTab(number)
 	if(number == 0) {
 		document.getElementById("portfolio").style.display = "block";
 		document.getElementById("tab-portfolio").classList.add("tab-selected");
-		document.getElementById("siuntiniai").style.display = "block";
+		if(rodytiSiuntinius)
+			document.getElementById("siuntiniai").style.display = "block";
 	} else if (number == 1) {
 		document.getElementById("about").style.display = "block";
 		document.getElementById("tab-about").classList.add("tab-selected");
