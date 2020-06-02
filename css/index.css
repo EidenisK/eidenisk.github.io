@@ -59,11 +59,19 @@
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
+} 
+
+.btn-outline-olive-inverse {
+	background: #988626;
+	color: #fff;
+	border-color: #988626;
 }
 
-body {
-	background-image: url("../img/pictures/background.jpg");
-	background-size: cover;
+.btn-outline-olive-inverse:hover {
+	border-color: #988626;
+	color: #988626;
+    background: transparent;
 }
 
 .btn-outline-olive, .modal-body button {
@@ -91,7 +99,7 @@ a:hover {
 #button-down-section {
 	margin-top: 0;
 	padding-top: 0;
-	padding-bottom: 0;
+	padding-bottom: 96;
 }
 
 #misc_projects_row {
@@ -154,16 +162,152 @@ a {
 	}
 }
 
+/* ----- skirtukai ----- */
+.tab-text {
+	text-align: center;
+	color: #988626;
+	background-color: transparent;
+}
+.tab-selected {
+	background-color: #988626;
+	color: white;
+}
+.tabs-container {
+	width: 100%;
+	margin:0;
+	max-width: 100vw;
+	line-height: 4rem;
+	padding: 0;
+	font-size: 1.5rem;
+	border-bottom: 2px solid #988626;
+	cursor: pointer;
+
+	position: relative;
+	z-index: 1;
+
+	-webkit-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.26);
+	-moz-box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.26);
+	box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.26);
+}
+.tabs-col {
+	padding: 0;
+	margin: 0;
+}
+.tabs-row {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+#tabs-section {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	padding-top:0;
+}
+
+#portfolio, #about {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+#about, #skills {
+	display: none;
+}
+
+#portfolio, #about, #skills {
+	padding-bottom: 0;
+	padding-top: 2rem;
+	position: relative;
+	z-index: 1;
+}
+/* --------------------- */
+
+
+
+/* ----- canvas -------- */
+#canvas {
+	z-index: -1;
+	position: absolute;
+	top:0;
+	left:0;
+}
+/* --------------------- */
+
+#PICTURE-BACKGROUND {
+	background-image: url("../img/pictures/pattern.png");
+	background-size: contain;
+	background-size: 100vw;
+	position: relative;
+	overflow: hidden;
+}
+
+#about-container {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+/* ---------------- SKILLS ------------- */
+
+#skills-container {
+	margin: auto;
+	max-width: 100vw;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+#languages-row .col-lg, #misc-row .col-md {
+	text-align: center;
+}
+#languages-row img {
+	max-width: 9rem;
+	margin: auto;
+}
+
+#category-row {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+.category {
+	background: rgba(255, 255, 255, 0.4);
+	margin-left: 1rem;
+	margin-right: 1rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	border-radius: 1rem;
+}
+.category img {
+	margin-right: 1rem;
+	margin-left: 1rem;
+	max-width: 5rem;
+}
+
+#misc-row img {
+	max-width: 5rem;
+	margin: auto;
+	margin-bottom: 1rem;
+}
+
+/* -------------------------------------- */
+
+/* ------ siuntiniai ------ */
 #siuntiniai {
 	display:none;
 	/*border: 2px solid white;*/
 	text-align: center;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(255, 255, 255, 0.5);
 	width: 80%;
 	margin: auto;
 	padding: 1rem;
-	color: #fff;
-	margin-bottom: 2rem !important;
+	color: #988626;
+	margin-bottom: 3rem !important;
 }
 #siuntiniai h2 {
 	margin-bottom: 1rem;
@@ -177,11 +321,12 @@ a {
 	padding:0;
 }
 #siuntiniai li a {
-	color: #fff !important;
+	color: #988626 !important;
 	text-decoration: none;
 }
 .siuntiniaiDate {
 	display: inline;
-	color: #ddd;
+	color: #988626;
 	font-style: italic;
 }
+/* --------------------- */

@@ -27,6 +27,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-auth.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
 
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
@@ -37,9 +38,9 @@
 <!-------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------->
-
 <body id="page-top">
 
+<div id="mouse-event-div">
   <!-- Masthead -->
   <header class="masthead text-olive text-center" style="padding-top: 3rem !important">
     <div class="container d-flex align-items-center flex-column" id="name-container">
@@ -49,7 +50,7 @@
 
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">Eidenis Kasperavičius</h1>
-      <p class="masthead-subheading font-weight-light mb-4">Programavimas • Grafinis ir audio dizainas<br>Elektronikos, WEB ir IT sistemų kūrimas</p>
+      <p class="masthead-subheading font-weight-light mb-4">Programavimas • Grafinis ir audio dizainas<br>Elektronikos, WEB ir IT sprendimai</p>
 
       <!-- Masthead social buttons -->
       <div class="container">
@@ -59,7 +60,7 @@
           <i class="fab fa-github"></i></a>
         <a class="btn btn-outline-olive btn-social mx-1" href="https://instagram.com/eidenisk/">
           <i class="fab fa-instagram"></i></a>
-        <a class="btn btn-outline-olive btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
+        <a class="btn btn-outline-olive-inverse btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
           <i class="far fa-envelope"></i></a>
         <a class="btn btn-outline-olive btn-social mx-1" href="https://bit.ly/e-k-db">
           <i class="fas fa-server"></i></a>
@@ -68,17 +69,167 @@
     </div>
   </header>
 
-	<section class="page-section portfolio" id="button-down-section">
-		<div class="container text-center">
-		  	<a href="#about"><i class="fas fa-chevron-down" id="button-down"></i></a>
+<canvas id="canvas"></canvas>
+
+<section class="page-section portfolio" id="button-down-section">
+	<div class="container text-center">
+	  	<a href="#tabs-section"><i class="fas fa-chevron-down" id="button-down"></i></a>
+	</div>
+</section>
+
+</div> <!-- mouse event div -->
+
+<!-------------------------------------------------------------------------------------------------->
+<!---------------------------------------   TABS SECTION   ----------------------------------------->
+<!-------------------------------------------------------------------------------------------------->
+
+<section class="page-section portfolio" id="tabs-section">
+	<div class="container tabs-container">
+		<div class="row tabs-row">
+			<div class="col-md-4 tabs-col" onclick="switchTab(0)">
+				<div id="tab-portfolio" class="tab-text tab-selected">PROJEKTAI</div>
+			</div>
+			<div class="col-md-4 tabs-col" onclick="switchTab(1)">
+				<div id="tab-about" class="tab-text">PASIEKIMAI</div>
+			</div>
+			<div class="col-md-4 tabs-col" onclick="switchTab(2)">
+				<div id="tab-skills" class="tab-text">ĮGŪDŽIAI</div>
+			</div>
 		</div>
-	</section>
+	</div>
+</section>
+
+<!--<div id="page-background"></div>-->
+
+<!-------------------------------------------------------------------------------------------------->
+<!----------------------------------   PORTFOLIO SECTION   ----------------------------------------->
+<!-------------------------------------------------------------------------------------------------->
+
+<div id="PICTURE-BACKGROUND">
+  <section class="page-section portfolio text-olive mb-0" id="portfolio">
+    <div class="container" id="about-container">
+    	<div class="row">
+    		<!---------------------------------->
+    		<div class="col-md-4">
+				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		                	<div>GVG Tvarkaraštis</div><br>
+		                	<div>2018</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/gvgtvarkarastis.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+	                		<div>Fizika - tai gyvenimas</div><br>
+		                	<div>2018</div>
+		             	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/fizikataigyvenimas.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		                	<div>Metų išmintis</div><br>
+		                	<div>2019</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/metai.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    	</div>
+    	<div class="row">
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		              	  	<div>Kam dabar langas?</div><br>
+		                	<div>2019</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/kamdabarlangas.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		                	<div>Tėvynės sargas</div><br>
+		                	<div>2019</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/tevynessargas.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
+	                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+	                  	<div class="portfolio-item-caption-content text-center">
+	                    	<div>Ekranų tipų nustatymas</div><br>
+		                	<div>2020</div>
+	                  	</div>
+	                </div>
+	                <img class="img-fluid" src="img/portfolio/ekranutipunustatymas.png" alt="">
+              	</div>
+    		</div>
+    		<!---------------------------------->
+    	</div>
+    	<div class="row">
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		                	<div>Video projektai</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/youtube.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		              	<div class="portfolio-item-caption-content text-center">
+		                	<div>Referatai, esė, recenzijos</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/kitiprojektai.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    		<div class="col-md-4">
+    			<div class="portfolio-item mx-auto">
+		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+		            	<div class="portfolio-item-caption-content text-center">
+		                	<div>Ir daug kitų...</div>
+		              	</div>
+		            </div>
+		            <img class="img-fluid" src="img/portfolio/kiti.png" alt="">
+	          	</div>
+    		</div>
+    		<!---------------------------------->
+    	</div>
+    </div>
+  </section>
 
 <!-------------------------------------------------------------------------------------------------->
 <!--------------------------------------   ABOUT SECTION   ----------------------------------------->
 <!-------------------------------------------------------------------------------------------------->
 
-  <section class="page-section portfolio text-olive mb-0" id="about" id="portfolio">
+	<section class="page-section portfolio text-olive mb-0" id="about">
     <div class="container" id="about-container">
 
       <div class="container-fluid timeline-container">
@@ -86,179 +237,124 @@
         	<!------------------------------------------------------->
             <li><div class="tldate">2018</div></li>
             <!------------------------------------------------------->
-            <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                  <h5>III vieta Respublikinėje lietuvių kalbos olimpiadoje</h5>
-                </div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
             <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item" data-toggle="modal" data-target="#portfolioModal1">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>GVG Tvarkaraštis</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/gvgtvarkarastis.png" alt="">
-	          	</div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Fizika - tai gyvenimas</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/fizikataigyvenimas.png" alt="">
-	          	</div>
-              </div>
+              	<div class="tl-circ"></div>
+              	<div class="timeline-panel">
+                	<div class="tl-heading">
+             	 		<h5>III vieta Respublikinėje lietuvių kalbos olimpiadoje</h5>
+                	</div>
+              	</div>
             </li>
             <!------------------------------------------------------->
             <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                  <h5>„Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</h5>
-                </div>
-              </div>
+              	<div class="tl-circ"></div>
+              	<div class="timeline-panel">
+	                <div class="tl-heading">
+	              		<h5>„Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</h5>
+	                </div>
+              	</div>
             </li>
             <!------------------------------------------------------->
             <li><div class="tldate">2019</div></li>
             <!------------------------------------------------------->
             <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Metų išmintis</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/metai.png" alt="">
-	          	</div>
-              </div>
+              	<div class="tl-circ"></div>
+              	<div class="timeline-panel">
+	                <div class="tl-heading">
+	              		<h5>Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</h5>
+	                </div>
+              	</div>
             </li>
             <!------------------------------------------------------->
             <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                  <h5>Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</h5>
-                </div>
-              </div>
+              	<div class="tl-circ"></div>
+              	<div class="timeline-panel">
+                	<div class="tl-heading">
+                  		<h5>"Lietuvos Maximalistai 2019" pažangumo stipendija</h5>
+                	</div>
+              	</div>
             </li>
             <!------------------------------------------------------->
             <li>
               <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Kam dabar langas?</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/kamdabarlangas.png" alt="">
-	          	</div>
-            </li>
-            <!------------------------------------------------------->
-            <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                  <h5>"Lietuvos Maximalistai 2019" pažangumo stipendija</h5>
-                </div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Tėvynės sargas</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/tevynessargas.png" alt="">
-	          	</div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                  <h5>„Metų jaunojo išradėjo“ apdovanojimas („Auksinės lemputės 2019“)</h5>
-                </div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li><div class="tldate">2020</div></li>
-            <!------------------------------------------------------->
-            <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
-                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                  <div class="portfolio-item-caption-content text-center">
-                    <div>Ekranų tipų nustatymas</div>
-                  </div>
-                </div>
-                <img class="img-fluid" src="img/portfolio/ekranutipunustatymas.png" alt="">
-              </div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Video projektai</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/youtube.png" alt="">
-	          	</div>
-              </div>
-            </li>
-            <!------------------------------------------------------->
-            <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel align-items-stretch panel-project">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              <div class="portfolio-item-caption-content text-center">
-		                <div>Referatai, esė, recenzijos</div>
-		              </div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/kitiprojektai.png" alt="">
-	          	</div>
+              	<div class="timeline-panel">
+                	<div class="tl-heading">
+                  		<h5>„Metų jaunojo išradėjo“ apdovanojimas („Auksinės lemputės 2019“)</h5>
+                	</div>
+              	</div>
             </li>
             <!------------------------------------------------------->
           </ul>
       </div>
-
     </div>
   </section>
 
-  <section class="page-section portfolio text-olive mb-0" id="siuntiniai">
-    <h2>Siuntiniai</h2>
-    <div class="container" id="siuntiniai-container">
-      <ul id="siuntiniaiList"></ul>
-    </div>
-  </section>
+<!-------------------------------------------------------------------------------------------------->
+<!-------------------------------------   SKILLS SECTION   ----------------------------------------->
+<!-------------------------------------------------------------------------------------------------->
 
-  <div class="text-white image-caption"><i>Fonas - Dave platformoje Unsplash</i></div>
+<section class="page-section portfolio text-olive mb-0" id="skills">
+	<div class="container" id="skills-container">
+		<!--------------- LANGUAGES ---------------->
+		<div class="row" id="languages-row">
+			<div class="col"></div>
+			<div class="col-lg"><img src="./img/logos/c++.png"/></div>
+			<div class="col-lg"><img src="./img/logos/c-sharp.png"/></div>
+			<div class="col-lg"><img src="./img/logos/java.png"/></div>
+			<div class="col-lg"><img src="./img/logos/python.png"/></div>
+			<div class="col-lg"><a href="https://https://firebase.google.com/"><img src="./img/logos/firebase.png"/></a></div>
+			<div class="col"></div>
+		</div>
+		<!---------- WEB, PC, ANDROID -------------->
+		<div class="row" id="category-row">
+			<div class="col-md category vertical-center">
+				<div class="vertical-center">
+					<img src="./img/logos/html.png"/>
+					<img src="./img/logos/css.png"/>
+					<img src="./img/logos/js.png"/><br>
+					<a href="https://getbootstrap.com/"><img src="./img/logos/bootstrap.png"/></a>
+					<a href="https://jquery.com/"><img src="./img/logos/jquery.png"/></a>
+				</div>
+			</div>
+			<div class="col-md category">
+				<div class="vertical-center">
+					<a href="https://unity.com/"><img src="./img/logos/unity.png"/></a>
+					<img src="./img/logos/wpf.png"/>
+					<img src="./img/logos/vba.png"/>
+				</div>
+			</div>
+			<div class="col-md category">
+				<div class="vertical-center">
+					<img src="./img/logos/android.png"/>
+				</div>
+			</div>
+		</div>
+		<!---------------- MISC ---------------------->
+		<div class="row" id="misc-row">
+			<div class="col"></div>
+			<div class="col-md"><img src="./img/logos/arduino.png"/></div>
+			<div class="col-md"><img src="./img/logos/photoshop.png"/></div>
+			<div class="col-md"><img src="./img/logos/premiere.png"/></div>
+			<div class="col-md"><img src="./img/logos/audition.png"/></div>
+			<div class="col-md"><img src="./img/logos/office.png"/></div>
+			<div class="col-md"><a href="https://www.autodesk.com/products/fusion-360/overview"><img src="./img/logos/fusion.png"/></a></div>
+			<div class="col"></div>
+		</div>
+	</div>
+</section>
+
+<!-------------------------------------------------------------------------------------------------->
+<!-------------------------------------   DOWNLOAD SECTION   --------------------------------------->
+<!-------------------------------------------------------------------------------------------------->
+
+<section class="page-section portfolio text-olive mb-0" id="siuntiniai">
+	<h2>Siuntiniai</h2>
+	<div class="container" id="siuntiniai-container">
+	  <ul id="siuntiniaiList"></ul>
+	</div>
+</section>
+
+</div> <!-- fonas -->
 
 <!-------------------------------------------------------------------------------------------------->
 <!--------------------------------    PORTFOLIO MODALS    ------------------------------------------>
@@ -541,7 +637,8 @@
                 <!-- Portfolio Modal - Text -->
                 <p>(2016-11) Istorijos referatas „Lietuva vokiečių okupacijos sąlygomis I pasaulinio karo metu“ <a href="./projektai/istorijos_referatas.docx">Siųstis</a><br>
          (2018-02) Viešoji kalba „Antikos įvaizdžiai kultūroje.docx“ <a href="./projektai/antikos_ivaizdziai.docx">Siųstis</a><br>
-         (2018-06) Pristatymas „Vaivorykštės gimnazijos 3D modelis“ <a href="./projektai/3D_pristatymas.pptx">Siųstis</a> <br>
+         (2018-06) Pristatymas „Vaivorykštės gimnazijos 3D modelis“ <a href="./projektai/3D_pristatymas.pptx">Siųstis</a><br>
+         (2020-03) Viešoji kalba „Intertekstualumas lietuvių literatūroje“ <a href="./projektai/intertekstualumas.docx">Siųstis</a><br>
               </div>
             </div>
           </div>
@@ -593,7 +690,7 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/bootstrap-4.5.0-dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
