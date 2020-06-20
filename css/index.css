@@ -77,7 +77,10 @@ a:hover {
 	display: grid;
 	align-items: center;
 	justify-content: center;
-
+	max-width: 100vw;
+}
+.masthead .row {
+	max-width: 100vw;
 }
 .masthead-avatar {
 	max-width: 50vw;
