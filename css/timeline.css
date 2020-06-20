@@ -19,24 +19,23 @@
   bottom: 0;
   position: absolute;
   content: " ";
-  width: 3px;
-  background-color: white;
+  width: 1px;
+  background-color: #7db700;
   left: 50%;
   margin-left: -1.5px;
 }
 
 .tldate {
   display: block;
-  width: 200px;
-  background-color: #fff;
-  border: 3px solid #fff;
-  color: #988626;
+  width: 170px;
+  background-color: #202020;
+  /*border: 1px solid rgba(255,255,255,0.5);*/
+  color: #7db700;
   margin: 0 auto;
-  padding: 3px 0;
+  padding: 1px 1px;
   font-weight: bold;
   text-align: center;
   font-size: 1.5rem;
-
   font-family: "Segoe UI";
 }
 
@@ -61,8 +60,8 @@
 .timeline li .timeline-panel {
   width: 46%;
   float: left;
-  background: #fff;
-  border: 1px solid #d4d4d4;
+  background: #202020;
+  /*border: 1px solid #909090;*/
   padding: 20px;
   position: relative;
   -webkit-border-radius: 8px;
@@ -80,8 +79,8 @@
   right: -15px;
   display: inline-block;
   border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
+  border-left: 15px solid #202020;
+  border-right: 0 solid #202020;
   border-bottom: 15px solid transparent;
   content: " ";
 }
@@ -92,8 +91,8 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid #202020;
+  border-right: 0 solid #202020;
   border-bottom: 14px solid transparent;
   content: " ";
 }
@@ -125,16 +124,15 @@
 /** timeline circle icons **/
 .timeline li .tl-circ {
   position: absolute;
-  top: 23px;
+  top: 30px;
   left: 50%;
   text-align: center;
-  background: #fff;
-  color: #fff;
-  width: 35px;
-  height: 35px;
+  background: #7db700;
+  width: 20px;
+  height: 20px;
   line-height: 35px;
-  margin-left: -16px;
-  border: 3px solid #fff;
+  margin-left: -11px;
+  border: 3px solid #7db700;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -146,9 +144,9 @@
 
 .tl-heading h5 {
   margin: 0;
-  color: #988626;
+  color: rgba(255,255,255,1);
   margin-bottom: 5px;
-  font-weight: bold;
+  /*font-weight: bold;*/
 }
 .tl-body p {
   color: black;
@@ -185,8 +183,8 @@
   }
 
   ul.timeline li .tl-circ {
-    top: 22px;
-    left: 22px;
+    top: 30px;
+    left: 30px;
     margin-left: 0;
 
   }
@@ -212,21 +210,3 @@
     right: auto;
   }
 }
-
-
-/* ---------------- timeline portfolio integration ------------- */
-
-.panel-project > .portfolio-item {
-  margin: auto !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  max-width: 35rem !important;
-}
-
-.panel-project {
-  border: none !important;
-  padding: 0 !important;
-  background: transparent !important;
-}
-
-/* -------------------------------------------------------------- */

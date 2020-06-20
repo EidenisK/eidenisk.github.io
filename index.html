@@ -44,39 +44,32 @@
   <!-- Masthead -->
   <header class="masthead text-olive text-center" style="padding-top: 3rem !important">
     <div class="container d-flex align-items-center flex-column" id="name-container">
+      <div class="row">
+        <div class="col order-md-last" id="masthead-col">
+          <img class="masthead-avatar mb-5" src="img/profile_transparent_color.png" alt="">
+        </div>
+        <div class="col" id="masthead-col">
+          <h1 class="masthead-heading text-uppercase">Eidenis <div class="greyText">Kasperavičius</div></h1>
+          <p class="masthead-subheading font-weight-light mb-4">Programavimas | Grafinis ir audio dizainas<br>WEB, IT, Elektronikos sprendimai</p>
 
-      <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="img/profile.png" alt="">
-
-      <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">Eidenis Kasperavičius</h1>
-      <p class="masthead-subheading font-weight-light mb-4">Programavimas • Grafinis ir audio dizainas<br>Elektronikos, WEB ir IT sprendimai</p>
-
-      <!-- Masthead social buttons -->
-      <div class="container">
-        <a class="btn btn-outline-olive btn-social mx-1" href="https://linkedin.com/in/eidenis">
-          <i class="fab fa-linkedin-in"></i></a>
-        <a class="btn btn-outline-olive btn-social mx-1" href="https://github.com/eidenisk">
-          <i class="fab fa-github"></i></a>
-        <a class="btn btn-outline-olive btn-social mx-1" href="https://instagram.com/eidenisk/">
-          <i class="fab fa-instagram"></i></a>
-        <a class="btn btn-outline-olive-inverse btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
-          <i class="far fa-envelope"></i></a>
-        <a class="btn btn-outline-olive btn-social mx-1" href="https://bit.ly/e-k-db">
-          <i class="fas fa-server"></i></a>
+          <div class="container">
+            <a class="btn btn-outline-olive btn-social mx-1" href="https://linkedin.com/in/eidenis">
+              <i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-olive btn-social mx-1" href="https://github.com/eidenisk">
+              <i class="fab fa-github"></i></a>
+            <a class="btn btn-outline-olive btn-social mx-1" href="https://instagram.com/eidenisk/">
+              <i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-olive-inverse btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
+              <i class="far fa-envelope"></i></a>
+            <a class="btn btn-outline-olive btn-social mx-1" href="https://bit.ly/e-k-db">
+              <i class="fas fa-server"></i></a>
+          </div>
+        </div>
       </div>
-
     </div>
   </header>
 
 <canvas id="canvas"></canvas>
-
-<section class="page-section portfolio" id="button-down-section">
-	<div class="container text-center">
-	  	<a href="#tabs-section"><i class="fas fa-chevron-down" id="button-down"></i></a>
-	</div>
-</section>
-
 </div> <!-- mouse event div -->
 
 <!-------------------------------------------------------------------------------------------------->
@@ -99,7 +92,6 @@
 	</div>
 </section>
 
-<!--<div id="page-background"></div>-->
 
 <!-------------------------------------------------------------------------------------------------->
 <!----------------------------------   PORTFOLIO SECTION   ----------------------------------------->
@@ -223,6 +215,13 @@
     		<!---------------------------------->
     	</div>
     </div>
+
+    <div id="siuntiniai">
+      <h2>Siuntiniai</h2>
+      <div class="container" id="siuntiniai-container">
+        <ul id="siuntiniaiList"></ul>
+      </div>
+    </div>
   </section>
 
 <!-------------------------------------------------------------------------------------------------->
@@ -250,7 +249,8 @@
               	<div class="tl-circ"></div>
               	<div class="timeline-panel">
 	                <div class="tl-heading">
-	              		<h5>„Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</h5>
+	              		<h5><a href="https://www.ve.lt/naujienos/kultura/renginiai/klaipedos-rajono-jaunimui-iteiktos-auksines-lemputes-1679946/">
+                    „Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</a></h5>
 	                </div>
               	</div>
             </li>
@@ -261,7 +261,8 @@
               	<div class="tl-circ"></div>
               	<div class="timeline-panel">
 	                <div class="tl-heading">
-	              		<h5>Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</h5>
+	              		<h5><a href="http://priekulekc.lt/1746-2/">
+                    Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</a></h5>
 	                </div>
               	</div>
             </li>
@@ -270,7 +271,8 @@
               	<div class="tl-circ"></div>
               	<div class="timeline-panel">
                 	<div class="tl-heading">
-                  		<h5>"Lietuvos Maximalistai 2019" pažangumo stipendija</h5>
+                  		<h5><a href="https://www.maxima.lt/lietuvos-maximalistai">
+                      "Lietuvos Maximalistai 2019" pažangumo stipendija</a></h5>
                 	</div>
               	</div>
             </li>
@@ -279,7 +281,8 @@
               <div class="tl-circ"></div>
               	<div class="timeline-panel">
                 	<div class="tl-heading">
-                  		<h5>„Metų jaunojo išradėjo“ apdovanojimas („Auksinės lemputės 2019“)</h5>
+                  		<h5><a href="https://mano-gargzdai.lt/component/k2/item/18512-jaunimas-magiskame-padekos-vakare-isdalino-auksines-lemputes-2019-fotogalerija">
+                      „Metų jaunojo išradėjo“ apdovanojimas („Auksinės lemputės 2019“)</a></h5>
                 	</div>
               	</div>
             </li>
@@ -343,17 +346,6 @@
 	</div>
 </section>
 
-<!-------------------------------------------------------------------------------------------------->
-<!-------------------------------------   DOWNLOAD SECTION   --------------------------------------->
-<!-------------------------------------------------------------------------------------------------->
-
-<section class="page-section portfolio text-olive mb-0" id="siuntiniai">
-	<h2>Siuntiniai</h2>
-	<div class="container" id="siuntiniai-container">
-	  <ul id="siuntiniaiList"></ul>
-	</div>
-</section>
-
 </div> <!-- fonas -->
 
 <!-------------------------------------------------------------------------------------------------->
@@ -393,8 +385,8 @@
                 <p class="mb-5">Web-scraper tipo programa, iš vaivorykstesgimnazija.lt puslapio nuskaitanti mokinių sąrašą, leidžianti jame daryti paiešką, vėliau rodo pasirinkto mokytojo, mokinio, klasės ar kabineto tvarkaraštį.<br>
                 Parsisiųstą tvarkaraštį programa saugo, jį rodo atskirai kiekvienai dienai arba tik vienos dienos pamokas - valdiklyje (widget), o pasirinkus gali ir rodyti pranešimus (notifications) apie dabartinę ir kitą pamokas.</p>
                 <h4>Responsive (prisitaikančiojo dizaino) svetainė</h4>
-                <p class="mb-5">Kurta naudojant Bootstrap šablonus, jQuery ir panašius įrankius. Pritaikyta žiūrėjimui tiek kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
-                <a href="https://bit.ly/gvgtvarkarastis"><button class="btn btn-primary">
+                <p class="mb-5">Kurta naudojant Bootstrap šablonus, jQuery ir kitus įrankius. Pritaikyta žiūrėjimui tiek kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
+                <a href="https://bit.ly/gvgtvarkarastis"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Skaityti daugiau...
                 </button></a>
@@ -435,7 +427,7 @@
                 <p class="mb-5">Čia rasite mokslinius ir kūrybinius darbus, naudingas nuorodas, nuotraukas ir kt.<br>
                 Moksliniai darbai: referatas "Radijas. Radijo bangos", Herco eksperimento mokslinė analizė, viešosios nuomonės apie elektromagnetines bangas tyrimas.<br>
             	Naujausias mokslinis darbas - sukurta nauja priemonė nustatyti Android telefono ekrano tipą (LCD arba LED).</p>
-                <a href="https://bit.ly/fizika_gyvenimas"><button class="btn btn-primary">
+                <a href="https://bit.ly/fizika_gyvenimas"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Skaityti daugiau...
                 </button></a>
@@ -475,7 +467,7 @@
                 <!-- Portfolio Modal - Text -->
                 <h4>Kristijonui Donelaičiui ir jo poemai „Metai“ skirta svetainė</h4>
                 <p class="mb-5">Kurta projektinio darbo užduočiai, aktyviai skelbta įvairuose švietimo ir naujienų puslapiuose. Be poemos, jos analizės ir autoriaus gyvenimo faktų taip pat patalpinta dalis kitų projektinių darbų: vaizdo įrašai, prezentacijos bei žaidimai.</p>
-                <a href="https://bit.ly/metu-ismintis"><button class="btn btn-primary">
+                <a href="https://bit.ly/metu-ismintis"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Skaityti daugiau...
                 </button></a>
@@ -517,7 +509,7 @@
                 <!-- Portfolio Modal - Text -->
                 <h4>„Vaivorykštės“ gimnazistams skirtas puslapis, vykdantis greitą mokinių paiešką pagal pamokas</h4>
                 <p class="mb-5">Iš pagrindų kurta prisitaikančiojo dizaino svetainė su JS funkcijomis ir komunikacija su serveriu (Firebase); Python "web scrape" programa, nuskaitanti vaivorykstesgimnazija.lt tvarkaraštį (pagal "GVG tvarkaraštis" principus) ir atnaujinanti duomenų bazę pagal nurodytus duomenis (CLI)</p>
-                <a href="https://bit.ly/kamlangas"><button class="btn btn-primary">
+                <a href="https://bit.ly/kamlangas"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Išbandyti
                 </button></a>
@@ -561,7 +553,7 @@
                   <b>Žaidimo tikslas:</b> pasienio kontrolės poste vykdyti mašinų patikrą: sulaikyti mašinas, vežančias kontrabandą, nelegalius krovinius ar neturinčias tvarkingų techninių dokumentų.<br>
                   <b>Žaidimo metu:</b> susipažįstama su muitinės (pasienio kontrolės pareigūnų) veikla, jų darbo specifika, lavinamas pastabumas, taip pat ugdomas patriotiškumas, pagarba valstybės pareigūnams ir kt.
                 </p>
-                <a href="https://eidenisk.github.io/tevynes_sargas"><button class="btn btn-primary">
+                <a href="https://eidenisk.github.io/tevynes_sargas"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Skaityti daugiau arba žaisti
                 </button></a>
@@ -607,7 +599,7 @@
                   Originali dviejų programų sistema, padedanti nustatyti ekrano tipą (LCD arba LED), jei gamintojas neatskleidžia įrenginio duomenį ir kitais atvejais.<br>
                   Veikimo principas - duomenų surinkimas testo vykdymo Android aplikacija metu ir gautų duomenų analizė bei grafinis vaizdavimas Python naudojantis bibliotekomis.
                 </p>
-                <a href="https://fizika-gyvenimas.github.io/moksliniai.html"><button class="btn btn-primary">
+                <a href="https://fizika-gyvenimas.github.io/moksliniai.html"><button class="btn ">
                   <i class="fas fa-angle-right"></i>
                   &nbsp;Skaityti daugiau...
                 </button></a>

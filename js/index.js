@@ -25,7 +25,7 @@ $(document).ready(function() {
 		    var nuoroda = doc.data().nuoroda;
 
 		    var text = "<li>" + '<a href="' + nuoroda + '">' + pavadinimas + "</a>";
-	      	text += '  |  <div class="siuntiniaiDate">' + data.substring(0, 10) + '</div></li>';
+	      	text += '<div class="siuntiniaiDate">' + data.substring(0, 10) + '</div></li>';
 
      	 	siuntiniaiList.innerHTML = text + siuntiniaiList.innerHTML;
 	      	document.getElementById("siuntiniai").style.display = "block";
@@ -40,25 +40,27 @@ $(document).ready(function() {
 
 function switchTab(number)
 {
-	document.getElementById("portfolio").style.display = "none";
-	document.getElementById("about").style.display = "none";
-	document.getElementById("skills").style.display = "none";
-	document.getElementById("siuntiniai").style.display = "none";
+	if( number == 0 && $("#portfolio").is(":visible") ||
+		number == 1 && $("#about").is(":visible") ||
+		number == 2 && $("#skills").is(":visible"))
+		return;
+
+	$("#portfolio").fadeOut();
+	$("#about").fadeOut();
+	$("#skills").fadeOut();
 
 	document.getElementById("tab-portfolio").classList.remove("tab-selected");
 	document.getElementById("tab-about").classList.remove("tab-selected");
 	document.getElementById("tab-skills").classList.remove("tab-selected");
 
 	if(number == 0) {
-		document.getElementById("portfolio").style.display = "block";
+		$("#portfolio").delay(350).fadeIn(400);
 		document.getElementById("tab-portfolio").classList.add("tab-selected");
-		if(rodytiSiuntinius)
-			document.getElementById("siuntiniai").style.display = "block";
 	} else if (number == 1) {
-		document.getElementById("about").style.display = "block";
+		$("#about").delay(350).fadeIn(400);
 		document.getElementById("tab-about").classList.add("tab-selected");
 	} else if(number == 2) {
-		document.getElementById("skills").style.display = "block";
+		$("#skills").delay(350).fadeIn(400);
 		document.getElementById("tab-skills").classList.add("tab-selected");
 	}
 }
@@ -73,7 +75,7 @@ var context = canvas.getContext("2d");
 var mouseEventDiv = document.getElementById("mouse-event-div");
 
 var canvasWidth = $(window).width();
-var canvasHeight = $("#PICTURE-BACKGROUND").position().top;
+var canvasHeight = $("#PICTURE-BACKGROUND").position().top +1;
 
 $("#canvas").attr("width", canvasWidth);
 $("#canvas").attr("height", canvasHeight);
@@ -113,7 +115,7 @@ function drawTrailObject(x1, y1, x2, y2, x3, y3, opacity) {
 	context.closePath();
 
 	context.lineWidth = 1;
-	context.strokeStyle = "rgba(152,134,38," + opacity + ")";
+	context.strokeStyle = "rgba(255,255,255," + opacity + ")";
 	context.stroke();
 }
 
