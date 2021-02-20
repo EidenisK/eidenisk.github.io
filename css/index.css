@@ -114,6 +114,9 @@ a:hover {
 		margin-bottom: 1rem;
 		margin-left: 2rem;
 	}
+	#gvgtvarkarastis2 {
+		max-height: 80vh;
+	}
 }
 .greyText {
 	color: #7db700;
@@ -193,8 +196,60 @@ a:hover {
 	font-weight: bold;
 	font-size: 3pt;
 }
-.portfolio-item {
+#about-container .row {
+	width: auto;
+	margin: auto;
 	margin-top: 1rem !important;
+	background-color: rgba(255, 255, 255, 0) !important;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	transition: background-color 0.5s;
+}
+.portfolio-image {
+	opacity: 1;
+	border-radius: 0.5rem;
+	transition: opacity 0.5s;
+}
+#about-container .row:hover {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+	transition: background-color 0.5s;
+}
+.portfolio-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+.skills-span {
+	color: #ccc;
+	font-size: 2rem;
+	display: inline;
+}
+.portfolio-readmore div, .portfolio-readmore a {
+	color: #7db700;
+	cursor: pointer;
+	display: inline;
+}
+#about-container > h2 {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: normal;
+}
+#separator {
+	border-bottom: 1px solid gray;
+	margin: auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	width: 80%;
+}
+@media screen and (max-width: 766px) {
+	#about-container > h2 {
+		margin-bottom: 2rem;
+	}
+	.portfolio-image {
+		margin-bottom: 1rem;
+	}
 }
 /* ---------------------------------------------- */
 
@@ -205,54 +260,15 @@ a:hover {
 /* ---------------------------------------------- */
 
 /* ---------------- SKILLS ------------- */
-#skills-container {
+.skills-topic img {
+	max-width: 5rem;
 	margin: auto;
-	max-width: 100vw;
-	padding-left: 5vw;
-	padding-right: 5vw;
-	margin-top: 3rem;
+}
+.skills-topic {
+	margin: auto;
+	text-align: center;
 	margin-bottom: 3rem;
 }
-
-#languages-row .col-lg, #misc-row .col-md {
-	text-align: center;
-}
-#languages-row img {
-	max-width: 9rem;
-	margin: auto;
-}
-
-#category-row {
-	margin-top: 5rem;
-	margin-bottom: 5rem;
-}
-.category {
-	background: #202020;
-	margin-left: 1rem;
-	margin-right: 1rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	margin-bottom: 1rem;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-
-	border-radius: 1rem;
-}
-.category img {
-	margin-right: 1rem;
-	margin-left: 1rem;
-	max-width: 5rem;
-}
-
-#misc-row img {
-	max-width: 5rem;
-	margin: auto;
-	margin-bottom: 1rem;
-}
-
 /* -------------------------------------- */
 
 /* ------ siuntiniai ------ */
@@ -302,7 +318,7 @@ a:hover {
 
 /* -------- portfolio modals ------------ */
 #gvgtvarkarastis2 { /* smaller project image size */
-	max-height: 100vh;
+	max-height: 50vh;
 }
 #kamdabarlangas2 {
 	max-width: 100%;
@@ -315,15 +331,6 @@ a:hover {
 }
 .portfolio-modal h3 {
 	margin-top: 2rem;
-}
-.skills-div {
-	display:block;
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
-}
-.skills-span {
-	color: #ccc;
-	font-size: 2rem;
 }
 #csharp-icon {
 	 display:inline;
@@ -355,5 +362,9 @@ a:hover {
 .modal-content button:hover {
 	color: #7db700;
 	border-color: #7db700;
+}
+
+.modal-content .skills-div {
+	margin-bottom: 1rem;
 }
 /* -------------------------------------- */

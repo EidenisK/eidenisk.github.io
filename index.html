@@ -10,17 +10,18 @@
 
   <meta property="og:url" content="https://bit.ly/eidenis" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="Programavimas • Grafinis ir audio dizainas • WEB ir IT sistemų kūrimas"/>
+  <meta property="og:description" content="Programavimas • Grafinis ir audio dizainas • WEB ir IT sistemų kūrimas" />
   <meta property="og:image:url" content="https://eidenisk.github.io/img/profile.png" />
   <meta property="og:image" content="https://eidenisk.github.io/img/profile.png" />
-  <meta property="og:title" content="Eidenis Kasperavičius"/>
+  <meta property="og:title" content="Eidenis Kasperavičius" />
   <title>Eidenis Kasperavičius</title>
   <link REL="SHORTCUT ICON" href="./img/E.ico">
 
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css">
 
   <!-- script files -->
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase-app.js"></script>
@@ -38,183 +39,282 @@
 <!-------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------------------------------------------------------->
+
 <body id="page-top">
 
-<div id="mouse-event-div">
-  <!-- Masthead -->
-  <header class="masthead text-olive text-center" style="padding-top: 3rem !important">
-    <div class="container d-flex align-items-center flex-column" id="name-container">
-      <div class="row">
-        <div class="col order-md-last" id="masthead-col">
-          <img class="masthead-avatar mb-5" src="img/profile_transparent_color.png" alt="">
-        </div>
-        <div class="col" id="masthead-col">
-          <h1 class="masthead-heading text-uppercase">Eidenis <div class="greyText">Kasperavičius</div></h1>
-          <p class="masthead-subheading font-weight-light mb-4">Programavimas | Grafinis ir audio dizainas<br>WEB, IT, Elektronikos sprendimai</p>
+  <div id="mouse-event-div">
+    <!-- Masthead -->
+    <header class="masthead text-olive text-center" style="padding-top: 3rem !important">
+      <div class="container d-flex align-items-center flex-column" id="name-container">
+        <div class="row">
+          <div class="col order-md-last" id="masthead-col">
+            <img class="masthead-avatar mb-5" src="img/profile_transparent_color.png" alt="">
+          </div>
+          <div class="col" id="masthead-col">
+            <h1 class="masthead-heading text-uppercase">Eidenis <div class="greyText">Kasperavičius</div>
+            </h1>
+            <p class="masthead-subheading font-weight-light mb-4">Programavimas | Elektronika<br> Grafiniai, audio, IT sprendimai</p>
 
-          <div class="container">
-            <a class="btn btn-outline-olive btn-social mx-1" href="https://linkedin.com/in/eidenis">
-              <i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-olive btn-social mx-1" href="https://github.com/eidenisk">
-              <i class="fab fa-github"></i></a>
-            <a class="btn btn-outline-olive btn-social mx-1" href="https://instagram.com/eidenisk/">
-              <i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-olive-inverse btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
-              <i class="far fa-envelope"></i></a>
-            <a class="btn btn-outline-olive btn-social mx-1" href="https://bit.ly/ek_db">
-              <i class="fas fa-server"></i></a>
+            <div class="container">
+              <a class="btn btn-outline-olive btn-social mx-1" href="https://linkedin.com/in/eidenis">
+                <i class="fab fa-linkedin-in"></i></a>
+              <a class="btn btn-outline-olive btn-social mx-1" href="https://github.com/eidenisk">
+                <i class="fab fa-github"></i></a>
+              <a class="btn btn-outline-olive btn-social mx-1" href="https://instagram.com/eidenisk/">
+                <i class="fab fa-instagram"></i></a>
+              <a class="btn btn-outline-olive-inverse btn-social mx-1" href="mailto:eidenis.gargzdai eta gmail.com">
+                <i class="far fa-envelope"></i></a>
+              <a class="btn btn-outline-olive btn-social mx-1" href="https://bit.ly/ek_db">
+                <i class="fas fa-server"></i></a>
+            </div>
           </div>
         </div>
       </div>
+    </header>
+
+    <canvas id="canvas"></canvas>
+  </div> <!-- mouse event div -->
+
+  <!-------------------------------------------------------------------------------------------------->
+  <!---------------------------------------   TABS SECTION   ----------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
+
+  <section class="page-section portfolio" id="tabs-section">
+    <div class="container tabs-container">
+      <div class="row tabs-row">
+        <div class="col-md-4 tabs-col" onclick="switchTab(0)">
+          <div id="tab-portfolio" class="tab-text tab-selected">PROJEKTAI</div>
+        </div>
+        <div class="col-md-4 tabs-col" onclick="switchTab(1)">
+          <div id="tab-about" class="tab-text">PASIEKIMAI</div>
+        </div>
+        <div class="col-md-4 tabs-col" onclick="switchTab(2)">
+          <div id="tab-skills" class="tab-text">ĮGŪDŽIAI</div>
+        </div>
+      </div>
     </div>
-  </header>
-
-<canvas id="canvas"></canvas>
-</div> <!-- mouse event div -->
-
-<!-------------------------------------------------------------------------------------------------->
-<!---------------------------------------   TABS SECTION   ----------------------------------------->
-<!-------------------------------------------------------------------------------------------------->
-
-<section class="page-section portfolio" id="tabs-section">
-	<div class="container tabs-container">
-		<div class="row tabs-row">
-			<div class="col-md-4 tabs-col" onclick="switchTab(0)">
-				<div id="tab-portfolio" class="tab-text tab-selected">PROJEKTAI</div>
-			</div>
-			<div class="col-md-4 tabs-col" onclick="switchTab(1)">
-				<div id="tab-about" class="tab-text">PASIEKIMAI</div>
-			</div>
-			<div class="col-md-4 tabs-col" onclick="switchTab(2)">
-				<div id="tab-skills" class="tab-text">ĮGŪDŽIAI</div>
-			</div>
-		</div>
-	</div>
-</section>
+  </section>
 
 
-<!-------------------------------------------------------------------------------------------------->
-<!----------------------------------   PORTFOLIO SECTION   ----------------------------------------->
-<!-------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
+  <!----------------------------------   PORTFOLIO SECTION   ----------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
 
-<div id="PICTURE-BACKGROUND">
-  <section class="page-section portfolio text-olive mb-0" id="portfolio">
-    <div class="container" id="about-container">
-    	<div class="row">
-    		<!---------------------------------->
-    		<div class="col-md-4">
-				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		                	<div>GVG Tvarkaraštis</div><br>
-		                	<div>2018</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/gvgtvarkarastis.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-	                		<div>Fizika - tai gyvenimas</div><br>
-		                	<div>2018</div>
-		             	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/fizikataigyvenimas.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-				<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		                	<div>Metų išmintis</div><br>
-		                	<div>2019</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/metai.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    	</div>
-    	<div class="row">
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		              	  	<div>Kam dabar langas?</div><br>
-		                	<div>2019</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/kamdabarlangas.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal7">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		                	<div>Tėvynės sargas</div><br>
-		                	<div>2019</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/tevynessargas.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal8">
-	                <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-	                  	<div class="portfolio-item-caption-content text-center">
-	                    	<div>Ekranų tipų nustatymas</div><br>
-		                	<div>2020</div>
-	                  	</div>
-	                </div>
-	                <img class="img-fluid" src="img/portfolio/ekranutipunustatymas.png" alt="">
-              	</div>
-    		</div>
-    		<!---------------------------------->
-    	</div>
-    	<div class="row">
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		                	<div>Video projektai</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/youtube.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		              	<div class="portfolio-item-caption-content text-center">
-		                	<div>Referatai, esė, recenzijos</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/kitiprojektai.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    		<div class="col-md-4">
-    			<div class="portfolio-item mx-auto">
-		            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-		            	<div class="portfolio-item-caption-content text-center">
-		                	<div>Ir daug kitų...</div>
-		              	</div>
-		            </div>
-		            <img class="img-fluid" src="img/portfolio/kiti.png" alt="">
-	          	</div>
-    		</div>
-    		<!---------------------------------->
-    	</div>
-    </div>
+  <div id="PICTURE-BACKGROUND">
+    <section class="page-section portfolio text-olive mb-0" id="portfolio">
+      <div class="container" id="about-container">
+        <!---------------------------------->
+        <h2>SVARBIAUSI</h2>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/gvgtvarkarastis.png" data-toggle="modal" data-target="#portfolioModal1" />
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">GVG Tvarkaraštis</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-java mr-2"></i>
+                <i class="fab fa-android mr-2"></i>
+                <i class="fab fa-html5 mr-2"></i>
+                <i class="fab fa-bootstrap mr-2"></i>
+                <i class="fab fa-js-square mr-2"></i>
+                <div class="d-inline">2018</div>
+              </span>
+              Android tvarkaraščio programėlė Gargždų „Vaivorykštės“ gimnazijai, turinti 1000+
+              parsisiuntimų ir „Metų išradimo“ apdovanojimą
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal1">PLAČIAU</div>
+                <a class="ml-2" href="https://bit.ly/gvgtvarkarastis" target="_blank">Svetainė</a>
+                <a class="ml-2" href="https://github.com/EidenisK/tvarkarastis" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div id="separator"></div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/financialtracker.png" data-toggle="modal" data-target="#portfolioModal9"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Financial tracker</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-python mr-2"></i>
+                <i class="fas fa-database mr-2"></i>
+                <i class="fab fa-html5 ml-2 mr-2"></i>
+                <i class="fab fa-js-square mr-2"></i>
+                <div class="d-inline">2020</div>
+              </span>
+              Pajamų ir išlaidų sekimo sistema, galinti duomenis vaizduoti grafiškai
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal9">PLAČIAU</div>
+                <a class="ml-2" href="https://github.com/EidenisK/financial-tracker" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/ekranutipunustatymas.png" data-toggle="modal" data-target="#portfolioModal8"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Ekranų tipų nustatymas</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-java mr-2"></i>
+                <i class="fab fa-android mr-2"></i>
+                <i class="fab fa-python mr-2"></i>
+                <i class="fas fa-database mr-2"></i>
+                <div class="d-inline">2020</div>
+              </span>
+              Sistema automatiniam Android telefonų LED ir LCD ekranų tipų nustatymui
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal8">PLAČIAU</div>
+                <a class="ml-2" href="https://fizika-gyvenimas.github.io/moksliniai.html" target="_blank">Siųstis aprašą</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/tevynessargas.png" data-toggle="modal" data-target="#portfolioModal7"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Tėvynės sargas</h2>
+              <span class="skills-span align-middle mb-3">
+                <div class="mr-2 d-inline">Unity</div>
+                <div class="mr-2 d-inline">C#</div>
+                <i class="fab fa-html5 mr-2"></i>
+                <div class="d-inline">2019</div>
+              </span>
+              Unity Engine kurtas pasienio posto simuliatorius, pripažintas vienu geriausių nacionaliname LMNŠC konkurse
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal7">PLAČIAU</div>
+                <a class="ml-2" href="https://bit.ly/tevynes_sargas" target="_blank">Skaityti daugiau / žaisti</a>
+                <a class="ml-2" href="https://github.com/EidenisK/tevynes_sargas" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/kamdabarlangas.png" data-toggle="modal" data-target="#portfolioModal2"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Kam dabar langas?</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-python mr-2"></i>
+                <i class="fas fa-database mr-2"></i>
+                <i class="fab fa-html5 ml-2 mr-2"></i>
+                <i class="fab fa-js-square mr-2"></i>
+                <div class="d-inline">2019</div>
+              </span>
+              „Vaivorykštės“ gimnazistams skirtas puslapis, vykdantis greitą mokinių paiešką pagal pamokas
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal2">PLAČIAU</div>
+                <a class="ml-2" href="https://bit.ly/kamlangas" target="_blank">Svetainė</a>
+                <a class="ml-2" href="https://github.com/EidenisK/kam-dabar-langas" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/metai.png" data-toggle="modal" data-target="#portfolioModal4"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Metų išmintis</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-html5 mr-2"></i>
+                <i class="fab fa-bootstrap mr-2"></i>
+                <i class="fab fa-js-square mr-2"></i>
+                <div class="d-inline">2019</div>
+              </span>
+              Kristijonui Donelaičiui ir jo poemai „Metai“ skirta svetainė, aktyviai skelbta švietimo ir naujienų
+              puslapiuose.
+              Poema, jos analizė, vaizdo įrašai, žaidimai...
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal4">PLAČIAU</div>
+                <a class="ml-2" href="https://bit.ly/metu-ismintis" target="_blank">Svetainė</a>
+                <a class="ml-2" href="https://github.com/EidenisK/metai" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/fizikataigyvenimas.png" data-toggle="modal" data-target="#portfolioModal3"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Fizika - tai gyvenimas</h2>
+              <span class="skills-span align-middle mb-3">
+                <i class="fab fa-html5 mr-2"></i>
+                <i class="fab fa-bootstrap mr-2"></i>
+                <div class="d-inline">2018</div>
+              </span>
+              Projektinių darbų komandos puslapis:
+              referatas „Radijas. Radijo bangos“, Hero eksperimento, LED/LCD ekranų tyrimai ir kt.
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal3">PLAČIAU</div>
+                <a class="ml-2" href="https://bit.ly/fizika_gyvenimas" target="_blank">Svetainė</a>
+                <a class="ml-2" href="https://github.com/fizika-gyvenimas/fizika-gyvenimas.github.io" target="_blank">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/youtube.png" data-toggle="modal" data-target="#portfolioModal6"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Video projektai</h2>
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal6">PLAČIAU</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/kitiprojektai.png" data-toggle="modal" data-target="#portfolioModal5"/>
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Referatai, esė, recenzijos</h2>
+              <div class="portfolio-readmore mt-3">
+                <div data-toggle="modal" data-target="#portfolioModal5">PLAČIAU</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+        <div class="row">
+          <div class="col-md-4">
+            <img class="img-fluid portfolio-image" src="img/portfolio/kiti.png" />
+          </div>
+          <div class="col-md-8">
+            <div class="portfolio-text">
+              <h2 class="mb-0">Ir daug kitų...</h2>
+            </div>
+          </div>
+        </div>
+        <!---------------------------------->
+      </div> <!-- about-container -->
 
     <div id="siuntiniai">
       <h2>Siuntiniai</h2>
@@ -224,59 +324,74 @@
     </div>
   </section>
 
-<!-------------------------------------------------------------------------------------------------->
-<!--------------------------------------   ABOUT SECTION   ----------------------------------------->
-<!-------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
+  <!--------------------------------------   ABOUT SECTION   ----------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
 
-	<section class="page-section portfolio text-olive mb-0" id="about">
+  <section class="page-section portfolio text-olive mb-0" id="about">
     <div class="container" id="about-container">
 
       <div class="container-fluid timeline-container">
         <ul class="timeline">
           <!------------------------------------------------------->
-          <li><div class="tldate">2020</div></li>
-          <!------------------------------------------------------->
           <li>
-            <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h5>KTU „GIFTed“ talentų akademijos narys</h5>
-                </div>
-              </div>
-            </li>
+            <div class="tldate">2020</div>
+          </li>
+          <!------------------------------------------------------->
           <li class="timeline-inverted">
             <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h5><a href="https://www.lrt.lt/naujienos/lietuvoje/2/1214498/gargzdiskiai-vaikinai-irode-kad-geru-mokytoju-ir-mokiniu-yra-visur-ne-tik-vilniuje">
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5>Node.js backend programuotojas (2020.08—dabar)</h5>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5>KTU „GIFTed“ talentų akademijos narys</h5>
+              </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5><a
+                    href="https://www.lrt.lt/naujienos/lietuvoje/2/1214498/gargzdiskiai-vaikinai-irode-kad-geru-mokytoju-ir-mokiniu-yra-visur-ne-tik-vilniuje">
                     Ministro Pirmininko, Švietimo ministro</a> bei
-                    <a href="http://mano-gargzdai.lt/component/k2/item/20910-vaivorykstes-abiturientams-iskilmingai-iteikti-brandos-atestatai-fotogalerija">
+                  <a
+                    href="http://mano-gargzdai.lt/component/k2/item/20910-vaivorykstes-abiturientams-iskilmingai-iteikti-brandos-atestatai-fotogalerija">
                     Klaipėdos rajono savivaldybės </a>
-                    apdovanojimai už pasiekimus baigus gimnaziją</h5>
-                </div>
+                  apdovanojimai už pasiekimus baigus gimnaziją</h5>
               </div>
-            </li>
+            </div>
+          </li>
           <!------------------------------------------------------->
-          <li><div class="tldate">2019</div></li>
+          <li>
+            <div class="tldate">2019</div>
+          </li>
           <!------------------------------------------------------->
           <li>
             <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h5><a href="https://mano-gargzdai.lt/component/k2/item/18512-jaunimas-magiskame-padekos-vakare-isdalino-auksines-lemputes-2019-fotogalerija">
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5><a
+                    href="https://mano-gargzdai.lt/component/k2/item/18512-jaunimas-magiskame-padekos-vakare-isdalino-auksines-lemputes-2019-fotogalerija">
                     „Metų jaunojo išradėjo“ apdovanojimas („Auksinės lemputės 2019“)</a></h5>
-                </div>
               </div>
-            </li>
+            </div>
+          </li>
           <!------------------------------------------------------->
           <li class="timeline-inverted">
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                    <h5><a href="https://www.maxima.lt/lietuvos-maximalistai">
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5><a href="https://www.maxima.lt/lietuvos-maximalistai">
                     "Lietuvos Maximalistai 2019" pažangumo stipendija</a></h5>
-                </div>
               </div>
+            </div>
           </li>
           <!------------------------------------------------------->
           <li>
@@ -284,30 +399,33 @@
             <div class="timeline-panel">
               <div class="tl-heading">
                 <h5><a href="http://priekulekc.lt/1746-2/">
-                Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</a></h5>
-              </div>
-            </div>
-          </li>
-          <!------------------------------------------------------->
-          <li><div class="tldate">2018</div></li>
-          <!------------------------------------------------------->
-          <li class="timeline-inverted">
-            <div class="tl-circ"></div>
-            <div class="timeline-panel">
-              <div class="tl-heading">
-                <h5><a href="https://www.ve.lt/naujienos/kultura/renginiai/klaipedos-rajono-jaunimui-iteiktos-auksines-lemputes-1679946/">
-                „Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</a></h5>
+                    Priekulės kultūros centro Ernsto Vicherto premija „Jaunasis talentas 2018“</a></h5>
               </div>
             </div>
           </li>
           <!------------------------------------------------------->
           <li>
-              <div class="tl-circ"></div>
-              <div class="timeline-panel">
-                <div class="tl-heading">
-                <h5>III vieta Respublikinėje lietuvių kalbos olimpiadoje</h5>
-                </div>
+            <div class="tldate">2018</div>
+          </li>
+          <!------------------------------------------------------->
+          <li class="timeline-inverted">
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5><a
+                    href="https://www.ve.lt/naujienos/kultura/renginiai/klaipedos-rajono-jaunimui-iteiktos-auksines-lemputes-1679946/">
+                    „Metų išradėjo” apdovanojimas („Auksinės lemputės 2018”) už projektą „GVG Tvarkaraštis”</a></h5>
               </div>
+            </div>
+          </li>
+          <!------------------------------------------------------->
+          <li>
+            <div class="tl-circ"></div>
+            <div class="timeline-panel">
+              <div class="tl-heading">
+                <h5>III vieta Respublikinėje lietuvių kalbos olimpiadoje</h5>
+              </div>
+            </div>
           </li>
           <!------------------------------------------------------->
         </ul>
@@ -315,68 +433,62 @@
     </div>
   </section>
 
-<!-------------------------------------------------------------------------------------------------->
-<!-------------------------------------   SKILLS SECTION   ----------------------------------------->
-<!-------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
+  <!-------------------------------------   SKILLS SECTION   ----------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
 
-<section class="page-section portfolio text-olive mb-0" id="skills">
-	<div class="container" id="skills-container">
-		<!--------------- LANGUAGES ---------------->
-		<div class="row" id="languages-row">
-			<div class="col"></div>
-			<div class="col-lg"><img src="./img/logos/c++.png"/></div>
-			<div class="col-lg"><img src="./img/logos/c-sharp.png"/></div>
-			<div class="col-lg"><img src="./img/logos/java.png"/></div>
-			<div class="col-lg"><img src="./img/logos/python.png"/></div>
-			<div class="col-lg"><a href="https://https://firebase.google.com/"><img src="./img/logos/firebase.png"/></a></div>
-			<div class="col"></div>
-		</div>
-		<!---------- WEB, PC, ANDROID -------------->
-		<div class="row" id="category-row">
-			<div class="col-md category vertical-center">
-				<div class="vertical-center">
-					<img src="./img/logos/html.png"/>
-					<img src="./img/logos/css.png"/>
-					<img src="./img/logos/js.png"/><br>
-					<a href="https://getbootstrap.com/"><img src="./img/logos/bootstrap.png"/></a>
-					<a href="https://jquery.com/"><img src="./img/logos/jquery.png"/></a>
-				</div>
-			</div>
-			<div class="col-md category">
-				<div class="vertical-center">
-					<a href="https://unity.com/"><img src="./img/logos/unity.png"/></a>
-					<img src="./img/logos/wpf.png"/>
-					<img src="./img/logos/vba.png"/>
-				</div>
-			</div>
-			<div class="col-md category">
-				<div class="vertical-center">
-					<img src="./img/logos/android.png"/>
-				</div>
-			</div>
-		</div>
-		<!---------------- MISC ---------------------->
-		<div class="row" id="misc-row">
-			<div class="col"></div>
-			<div class="col-md"><img src="./img/logos/arduino.png"/></div>
-			<div class="col-md"><img src="./img/logos/photoshop.png"/></div>
-			<div class="col-md"><img src="./img/logos/premiere.png"/></div>
-			<div class="col-md"><img src="./img/logos/audition.png"/></div>
-			<div class="col-md"><img src="./img/logos/office.png"/></div>
-			<div class="col-md"><a href="https://www.autodesk.com/products/fusion-360/overview"><img src="./img/logos/fusion.png"/></a></div>
-			<div class="col"></div>
-		</div>
-	</div>
-</section>
+  <section class="page-section portfolio text-olive mb-0" id="skills">
+    <div class="container" id="skills-container">
+      <div class="skills-topic">
+        <h2>Pagrindinės programavimo kalbos</h2>
+        <img src="./img/logos/c++.png" />
+        <img src="./img/logos/python.png" />
+        <img src="./img/logos/js.png" />
+      </div>
+      <div class="skills-topic">
+        <h2>Kitos programavimo kalbos</h2>
+        <img src="./img/logos/html.png" />
+        <img src="./img/logos/css.png" />
+        <img src="./img/logos/c-sharp.png" />
+        <img src="./img/logos/java.png" />
+      </div>
+      <div class="skills-topic">
+        <h2>Įrankiai, technologijos</h2>
+        <img src="./img/logos/bootstrap.png" />
+        <img src="./img/logos/jquery.png" />
+        <img src="./img/logos/vba.png" />
+        <img src="./img/logos/wpf.png" />
+        <img src="./img/logos/firebase.png" />
+        <img src="./img/logos/unity.png" />
+        <img src="./img/logos/node.png" />
+      </div>
+      <div class="skills-topic">
+        <h2>Platformos</h2>
+        <img src="./img/logos/android.png" />
+        <img src="./img/logos/web.png" />
+        <img src="./img/logos/win.png" />
+      </div>
+      <div class="skills-topic">
+        <h2>Kita</h2>
+        <img src="./img/logos/arduino.png" />
+        <img src="./img/logos/photoshop.png" />
+        <img src="./img/logos/premiere.png" />
+        <img src="./img/logos/audition.png" />
+        <img src="./img/logos/office.png" />
+        <img src="./img/logos/fusion.png" />
+      </div>
+    </div>
+  </section>
 
-</div> <!-- fonas -->
+  </div> <!-- fonas -->
 
-<!-------------------------------------------------------------------------------------------------->
-<!--------------------------------    PORTFOLIO MODALS    ------------------------------------------>
-<!-------------------------------------------------------------------------------------------------->
+  <!-------------------------------------------------------------------------------------------------->
+  <!--------------------------------    PORTFOLIO MODALS    ------------------------------------------>
+  <!-------------------------------------------------------------------------------------------------->
 
   <!-- Portfolio Modal GVGTVARKARASTIS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal1Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -394,25 +506,30 @@
                 <img class="img-fluid rounded" id="gvgtvarkarastis2" src="img/portfolio/gvgtvarkarastis2.png" alt="">
                 <!-- Project skills -->
                 <div class="skills-div">
-	                <span class="skills-span p-3 align-middle">
-	                	<i class="fab fa-java mr-2"></i>
-	                	<i class="fab fa-android mr-2"></i>
-	                	|
-	                	<i class="fab fa-html5 ml-2 mr-2"></i>
-	                	<i class="fab fa-bootstrap mr-2"></i>
-	                	<i class="fab fa-js-square"></i>
-	                </span>
-	            </div>
+                  <span class="skills-span p-3 align-middle">
+                    <i class="fab fa-java mr-2"></i>
+                    <i class="fab fa-android mr-2"></i>
+                    |
+                    <i class="fab fa-html5 ml-2 mr-2"></i>
+                    <i class="fab fa-bootstrap mr-2"></i>
+                    <i class="fab fa-js-square"></i>
+                  </span>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>Programėlė Android išmaniesiems telefonams</h4>
-                <p class="mb-5">Web-scraper tipo programa, iš vaivorykstesgimnazija.lt puslapio nuskaitanti mokinių sąrašą, leidžianti jame daryti paiešką, vėliau rodo pasirinkto mokytojo, mokinio, klasės ar kabineto tvarkaraštį.<br>
-                Parsisiųstą tvarkaraštį programa saugo, jį rodo atskirai kiekvienai dienai arba tik vienos dienos pamokas - valdiklyje (widget), o pasirinkus gali ir rodyti pranešimus (notifications) apie dabartinę ir kitą pamokas.</p>
+                <p class="mb-5">Web-scraper tipo programa, iš vaivorykstesgimnazija.lt puslapio nuskaitanti mokinių
+                  sąrašą, leidžianti jame daryti paiešką, vėliau rodo pasirinkto mokytojo, mokinio, klasės ar kabineto
+                  tvarkaraštį.<br>
+                  Parsisiųstą tvarkaraštį programa saugo, jį rodo atskirai kiekvienai dienai arba tik vienos dienos
+                  pamokas - valdiklyje (widget), o pasirinkus gali ir rodyti pranešimus (notifications) apie dabartinę
+                  ir kitą pamokas.</p>
                 <h4>Responsive (prisitaikančiojo dizaino) svetainė</h4>
-                <p class="mb-5">Kurta naudojant Bootstrap šablonus, jQuery ir kitus įrankius. Pritaikyta žiūrėjimui tiek kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
+                <p class="mb-5">Kurta naudojant Bootstrap šablonus, jQuery ir kitus įrankius. Pritaikyta žiūrėjimui tiek
+                  kompiuteriuose, tiek išmanuosiuose įrenginiuose.</p>
                 <a href="https://bit.ly/gvgtvarkarastis"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Skaityti daugiau...
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Skaityti daugiau...
+                  </button></a>
               </div>
             </div>
           </div>
@@ -421,8 +538,9 @@
     </div>
   </div>
 
-   <!-- Portfolio Modal FIZIKA TAI GYVENIMAS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
+  <!-- Portfolio Modal FIZIKA TAI GYVENIMAS -->
+  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal3Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -440,20 +558,22 @@
                 <img class="img-fluid rounded" src="img/portfolio/fizikataigyvenimas2.png" alt="">
                 <!-- Project skills -->
                 <div class="skills-div">
-	                <span class="skills-span p-3 align-middle">
-	                	<i class="fab fa-html5 mr-2"></i>
-	                	<i class="fab fa-bootstrap"></i>
-	                </span>
-	            </div>
+                  <span class="skills-span p-3 align-middle">
+                    <i class="fab fa-html5 mr-2"></i>
+                    <i class="fab fa-bootstrap"></i>
+                  </span>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>Fizikos projektinių darbų komandos puslapis</h4>
                 <p class="mb-5">Čia rasite mokslinius ir kūrybinius darbus, naudingas nuorodas, nuotraukas ir kt.<br>
-                Moksliniai darbai: referatas "Radijas. Radijo bangos", Herco eksperimento mokslinė analizė, viešosios nuomonės apie elektromagnetines bangas tyrimas.<br>
-            	Naujausias mokslinis darbas - sukurta nauja priemonė nustatyti Android telefono ekrano tipą (LCD arba LED).</p>
+                  Moksliniai darbai: referatas "Radijas. Radijo bangos", Herco eksperimento mokslinė analizė, viešosios
+                  nuomonės apie elektromagnetines bangas tyrimas.<br>
+                  Naujausias mokslinis darbas - sukurta nauja priemonė nustatyti Android telefono ekrano tipą (LCD arba
+                  LED).</p>
                 <a href="https://bit.ly/fizika_gyvenimas"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Skaityti daugiau...
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Skaityti daugiau...
+                  </button></a>
               </div>
             </div>
           </div>
@@ -463,7 +583,8 @@
   </div>
 
   <!-- Portfolio Modal METŲ IŠMINTIS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="portfolioModal4Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal4Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -481,19 +602,21 @@
                 <img class="img-fluid rounded" src="img/portfolio/metai2.png" alt="">
                 <!-- Project skills -->
                 <div class="skills-div">
-	                <span class="skills-span p-3 align-middle">
-	                	<i class="fab fa-html5 ml-2 mr-2"></i>
-	                	<i class="fab fa-bootstrap mr-2"></i>
-	                	<i class="fab fa-js-square"></i>
-	                </span>
-	            </div>
+                  <span class="skills-span p-3 align-middle">
+                    <i class="fab fa-html5 mr-2"></i>
+                    <i class="fab fa-bootstrap mr-2"></i>
+                    <i class="fab fa-js-square"></i>
+                  </span>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>Kristijonui Donelaičiui ir jo poemai „Metai“ skirta svetainė</h4>
-                <p class="mb-5">Kurta projektinio darbo užduočiai, aktyviai skelbta įvairuose švietimo ir naujienų puslapiuose. Be poemos, jos analizės ir autoriaus gyvenimo faktų taip pat patalpinta dalis kitų projektinių darbų: vaizdo įrašai, prezentacijos bei žaidimai.</p>
+                <p class="mb-5">Kurta projektinio darbo užduočiai, aktyviai skelbta įvairuose švietimo ir naujienų
+                  puslapiuose. Be poemos, jos analizės ir autoriaus gyvenimo faktų taip pat patalpinta dalis kitų
+                  projektinių darbų: vaizdo įrašai, prezentacijos bei žaidimai.</p>
                 <a href="https://bit.ly/metu-ismintis"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Skaityti daugiau...
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Skaityti daugiau...
+                  </button></a>
               </div>
             </div>
           </div>
@@ -503,7 +626,8 @@
   </div>
 
   <!-- Portfolio Modal KAM DABAR LANGAS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal2Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -521,21 +645,23 @@
                 <img id="kamdabarlangas2" class="img-fluid rounded" src="img/portfolio/kamdabarlangas2.png" alt="">
                 <!-- Project skills -->
                 <div class="skills-div">
-	                <span class="skills-span p-3 align-middle">
-	                	<i class="fab fa-python mr-2"></i>
-	                	<i class="fas fa-database mr-2"></i>
-	                	|
-	                	<i class="fab fa-html5 ml-2 mr-2"></i>
-	                	<i class="fab fa-js-square"></i>
-	                </span>
-	            </div>
+                  <span class="skills-span p-3 align-middle">
+                    <i class="fab fa-python mr-2"></i>
+                    <i class="fas fa-database mr-2"></i>
+                    |
+                    <i class="fab fa-html5 ml-2 mr-2"></i>
+                    <i class="fab fa-js-square"></i>
+                  </span>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>„Vaivorykštės“ gimnazistams skirtas puslapis, vykdantis greitą mokinių paiešką pagal pamokas</h4>
-                <p class="mb-5">Iš pagrindų kurta prisitaikančiojo dizaino svetainė su JS funkcijomis ir komunikacija su serveriu (Firebase); Python "web scrape" programa, nuskaitanti vaivorykstesgimnazija.lt tvarkaraštį (pagal "GVG tvarkaraštis" principus) ir atnaujinanti duomenų bazę pagal nurodytus duomenis (CLI)</p>
+                <p class="mb-5">Iš pagrindų kurta prisitaikančiojo dizaino svetainė su JS funkcijomis ir komunikacija su
+                  serveriu (Firebase); Python "web scrape" programa, nuskaitanti vaivorykstesgimnazija.lt tvarkaraštį
+                  (pagal "GVG tvarkaraštis" principus) ir atnaujinanti duomenų bazę pagal nurodytus duomenis (CLI)</p>
                 <a href="https://bit.ly/kamlangas"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Išbandyti
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Išbandyti
+                  </button></a>
               </div>
             </div>
           </div>
@@ -545,7 +671,8 @@
   </div>
 
   <!-- Portfolio Modal TĖVYNĖS SARGAS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal7Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -569,17 +696,19 @@
                     |
                     <i class="fab fa-html5 ml-2"></i>
                   </span>
-              </div>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>„Unity engine“ kurtas 3D žaidimas - pasienio posto simuliacija</h4>
                 <p class="mb-5"><i>Kurta LMNŠC skelbtam žaidimų kūrimo konkursui (2019 m.).</i><br>
-                  <b>Žaidimo tikslas:</b> pasienio kontrolės poste vykdyti mašinų patikrą: sulaikyti mašinas, vežančias kontrabandą, nelegalius krovinius ar neturinčias tvarkingų techninių dokumentų.<br>
-                  <b>Žaidimo metu:</b> susipažįstama su muitinės (pasienio kontrolės pareigūnų) veikla, jų darbo specifika, lavinamas pastabumas, taip pat ugdomas patriotiškumas, pagarba valstybės pareigūnams ir kt.
+                  <b>Žaidimo tikslas:</b> pasienio kontrolės poste vykdyti mašinų patikrą: sulaikyti mašinas, vežančias
+                  kontrabandą, nelegalius krovinius ar neturinčias tvarkingų techninių dokumentų.<br>
+                  <b>Žaidimo metu:</b> susipažįstama su muitinės (pasienio kontrolės pareigūnų) veikla, jų darbo
+                  specifika, lavinamas pastabumas, taip pat ugdomas patriotiškumas, pagarba valstybės pareigūnams ir kt.
                 </p>
                 <a href="https://eidenisk.github.io/tevynes_sargas"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Skaityti daugiau arba žaisti
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Skaityti daugiau arba žaisti
+                  </button></a>
               </div>
             </div>
           </div>
@@ -589,7 +718,8 @@
   </div>
 
   <!-- Portfolio Modal EKRANŲ TIPŲ NUSTATYMAS -->
-  <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-labelledby="portfolioModal7Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal7Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -608,24 +738,27 @@
                 <div class="image-caption"><i>Viršelio nuotrauka - Umberto platformoje Unsplash</i></div>
                 <!-- Project skills -->
                 <div class="skills-div">
-	                <span class="skills-span p-3 align-middle">
+                  <span class="skills-span p-3 align-middle">
                     <i class="fab fa-java mr-2"></i>
                     <i class="fab fa-android mr-2"></i>
                     |
-	                	<i class="fab fa-python mr-2"></i>
+                    <i class="fab fa-python mr-2"></i>
                     <i class="fas fa-database mr-2"></i>
-	                </span>
-	            </div>
+                  </span>
+                </div>
                 <!-- Portfolio Modal - Text -->
                 <h4>Sistema Android telefonų ekranų tipų nustatymui</h4>
-                <p class="mb-5"><i>Kurta kartu su "Komanda be pavadinimo", <a href="bit.ly/fizika_gyvenimas">bit.ly/fizika_gyvenimas</a></i><br>
-                  Originali dviejų programų sistema, padedanti nustatyti ekrano tipą (LCD arba LED), jei gamintojas neatskleidžia įrenginio duomenį ir kitais atvejais.<br>
-                  Veikimo principas - duomenų surinkimas testo vykdymo Android aplikacija metu ir gautų duomenų analizė bei grafinis vaizdavimas Python naudojantis bibliotekomis.
+                <p class="mb-5"><i>Kurta kartu su "Komanda be pavadinimo", <a
+                      href="bit.ly/fizika_gyvenimas">bit.ly/fizika_gyvenimas</a></i><br>
+                  Originali dviejų programų sistema, padedanti nustatyti ekrano tipą (LCD arba LED), jei gamintojas
+                  neatskleidžia įrenginio duomenį ir kitais atvejais.<br>
+                  Veikimo principas - duomenų surinkimas testo vykdymo Android aplikacija metu ir gautų duomenų analizė
+                  bei grafinis vaizdavimas Python naudojantis bibliotekomis.
                 </p>
                 <a href="https://fizika-gyvenimas.github.io/moksliniai.html"><button class="btn ">
-                  <i class="fas fa-angle-right"></i>
-                  &nbsp;Skaityti daugiau...
-                </button></a>
+                    <i class="fas fa-angle-right"></i>
+                    &nbsp;Skaityti daugiau...
+                  </button></a>
               </div>
             </div>
           </div>
@@ -635,7 +768,8 @@
   </div>
 
   <!-- Portfolio Modal 5 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-labelledby="portfolioModal5Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal5Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -650,10 +784,14 @@
                 <!-- Portfolio Modal - Title -->
                 <h2 class="portfolio-modal-title text-uppercase mb-0">Kiti projektai</h2>
                 <!-- Portfolio Modal - Text -->
-                <p>(2016-11) Istorijos referatas „Lietuva vokiečių okupacijos sąlygomis I pasaulinio karo metu“ <a href="./projektai/istorijos_referatas.docx">Siųstis</a><br>
-         (2018-02) Viešoji kalba „Antikos įvaizdžiai kultūroje.docx“ <a href="./projektai/antikos_ivaizdziai.docx">Siųstis</a><br>
-         (2018-06) Pristatymas „Vaivorykštės gimnazijos 3D modelis“ <a href="./projektai/3D_pristatymas.pptx">Siųstis</a><br>
-         (2020-03) Viešoji kalba „Intertekstualumas lietuvių literatūroje“ <a href="./projektai/intertekstualumas.docx">Siųstis</a><br>
+                <p>(2016-11) Istorijos referatas „Lietuva vokiečių okupacijos sąlygomis I pasaulinio karo metu“ <a
+                    href="./projektai/istorijos_referatas.docx">Siųstis</a><br>
+                  (2018-02) Viešoji kalba „Antikos įvaizdžiai kultūroje.docx“ <a
+                    href="./projektai/antikos_ivaizdziai.docx">Siųstis</a><br>
+                  (2018-06) Pristatymas „Vaivorykštės gimnazijos 3D modelis“ <a
+                    href="./projektai/3D_pristatymas.pptx">Siųstis</a><br>
+                  (2020-03) Viešoji kalba „Intertekstualumas lietuvių literatūroje“ <a
+                    href="./projektai/intertekstualumas.docx">Siųstis</a><br>
               </div>
             </div>
           </div>
@@ -663,7 +801,8 @@
   </div>
 
   <!-- Portfolio Modal 6 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-labelledby="portfolioModal6Label" aria-hidden="true">
+  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal6Label" aria-hidden="true">
     <div class="modal-dialog modal-xl" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -679,22 +818,67 @@
                 <h2 class="portfolio-modal-title text-uppercase mb-0">Video projektai</h2>
                 <!-- Portfolio Modal - Text -->
                 <h3 class="mb-0">Kodėl reikia būti atsargiam internete?</h3>
-               <div class="subheading mb-3">Siužetinis filmukas saugaus interneto dienai (2018-01)</div>
-               <div class="embed-responsive embed-responsive-16by9">
-                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/jwm1ql2W44E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-               </div>
+                <div class="subheading mb-3">Siužetinis filmukas saugaus interneto dienai (2018-01)</div>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/jwm1ql2W44E"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
 
                 <h3 class="mb-0">„Vaivorykštės“ gimnazijos 3D modelis</h3>
-               <div class="subheading mb-3">Kūrybinis IT projektas MIK-11 konferencijai (2018-06)</div>
-               <div class="embed-responsive embed-responsive-16by9">
-                 <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/BTTIyW0DVbs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-               </div>
+                <div class="subheading mb-3">Kūrybinis IT projektas MIK-11 konferencijai (2018-06)</div>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/BTTIyW0DVbs"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
 
-              <h3 class="mb-0">Kaip apsisaugoti nuo stichinių nelaimių?</h3>
-             <div class="subheading mb-3">Informacinis-edukacinis filmukas, laimėjęs rajono savivaldybės organizuojamame konkurse.</div>
-             <div class="embed-responsive embed-responsive-16by9">
-               <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/H4L-l-SNODE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-             </div>
+                <h3 class="mb-0">Kaip apsisaugoti nuo stichinių nelaimių?</h3>
+                <div class="subheading mb-3">Informacinis-edukacinis filmukas, laimėjęs rajono savivaldybės
+                  organizuojamame konkurse.</div>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/H4L-l-SNODE"
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal FINANCIAL TRACKER -->
+  <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog"
+    aria-labelledby="portfolioModal9Label" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+            <i class="fas fa-times"></i>
+          </span>
+        </button>
+        <div class="modal-body text-center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title -->
+                <h2 class="portfolio-modal-title text-uppercase mb-0">Financial tracker</h2>
+                <!-- Portfolio Modal - Image -->
+                <img id="financialtracker2" class="img-fluid rounded" src="img/portfolio/financialtracker2.png" alt="">
+                <!-- Project skills -->
+                <div class="skills-div">
+                  <span class="skills-span p-3 align-middle">
+                    <i class="fab fa-python mr-2"></i>
+                    <i class="fas fa-database mr-2"></i>
+                    |
+                    <i class="fab fa-html5 ml-2 mr-2"></i>
+                    <i class="fab fa-js-square"></i>
+                  </span>
+                </div>
+                <!-- Portfolio Modal - Text -->
+                <h4>Pajamų ir išlaidų sekimo sistema, galinti duomenis vaizduoti grafiškai</h4>
+                <p class="mb-5">Prisitaikančiojo dizaino puslapis, komunikuojantis su Firebase duomenų baze. 
+                  Įrašai grupuojami chronologiškai, pagal kategoriją arba mėnesį.
+                </p>
               </div>
             </div>
           </div>
